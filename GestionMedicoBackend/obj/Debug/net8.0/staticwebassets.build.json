@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cZdzYEmV5bJhe5+KoEbSklIwhN0j+CnIOTf/LSZ6D8E=",
+  "Source": "GestionMedicoBackend",
+  "BasePath": "_content/GestionMedicoBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
