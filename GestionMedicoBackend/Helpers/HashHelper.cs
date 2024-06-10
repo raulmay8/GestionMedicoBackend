@@ -1,28 +1,18 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-
+﻿
 namespace GestionMedicoBackend.Helpers
 {
     public static class HashHelper
     {
+        // Hashea la contraseña
         public static string HashPassword(string password)
         {
-            using (var sha256 = SHA256.Create())
-            {
-                var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                var builder = new StringBuilder();
-                foreach (var b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
-            }
+            return BCrypt.Net.BCrypt.HashPassword(password, workFactor: 12);
         }
 
+        // Verifica la contraseña
         public static bool VerifyPassword(string password, string hashedPassword)
         {
-            var hashOfInput = HashPassword(password);
-            return hashOfInput == hashedPassword;
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
     }
 }

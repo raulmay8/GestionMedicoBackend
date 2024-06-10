@@ -135,3 +135,5 @@ C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\obj\Deb
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.pdb
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.genruntimeconfig.cache
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\ref\GestionMedicoBackend.dll
+C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.sourcelink.json
+C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll

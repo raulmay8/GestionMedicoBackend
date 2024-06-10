@@ -1,5 +1,4 @@
 ﻿using GestionMedicoBackend.DTOs.User;
-using GestionMedicoBackend.Services.User;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -36,17 +35,31 @@ namespace GestionMedicoBackend.Controllers.User
         [HttpPost]
         public async Task<ActionResult<UserDto>> CreateUser(CreateUserDto createUserDto)
         {
-            var user = await _userService.CreateUserAsync(createUserDto);
-            return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+            try
+            {
+                var user = await _userService.CreateUserAsync(createUserDto);
+                return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, UpdateUserDto updateUserDto)
         {
-            var result = await _userService.UpdateUserAsync(id, updateUserDto);
-            if (!result) return NotFound();
+            try
+            {
+                var result = await _userService.UpdateUserAsync(id, updateUserDto);
+                if (!result) return NotFound();
 
-            return NoContent();
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]
@@ -57,5 +70,24 @@ namespace GestionMedicoBackend.Controllers.User
 
             return NoContent();
         }
+
+        [HttpPatch("{id}/change-status")]
+        public async Task<IActionResult> ToggleUserStatus(int id)
+        {
+            var result = await _userService.ToggleUserStatusAsync(id);
+            if (!result) return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpGet("confirm-account")]
+        public async Task<IActionResult> ConfirmAccount([FromQuery] string token)
+        {
+            var result = await _userService.ConfirmAccountAsync(token);
+            if (!result) return BadRequest(new { message = "Token inválido o expirado." });
+
+            return Ok(new { message = "Cuenta confirmada exitosamente." });
+        }
+
     }
 }
