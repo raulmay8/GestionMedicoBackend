@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GestionMedicoBackend.Models;
+using GestionMedicoBackend.Models.Consultorio;
 
 namespace GestionMedicoBackend.Data
 {
