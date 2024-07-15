@@ -17,3 +17,7 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Raul May/source/repos/GestionMedicoBackend/GestionMedicoBackend/Templates/EmailTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = VGVtcGxhdGVzXEVtYWlsVGVtcGxhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

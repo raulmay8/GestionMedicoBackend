@@ -4,14 +4,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using GestionMedicoBackend.Services.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddScoped<EmailServices>();
+builder.Services.AddScoped<EmailTemplateService>();
 builder.Services.AddScoped<TokenServices>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<IRoleService, RolService>();
+builder.Services.AddScoped<IPermissionService, PermissionService>();
+builder.Services.AddScoped<IRolePermissionService, RolePermissionService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionMedicoBackend.Models.Auth;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -31,5 +32,7 @@ namespace GestionMedicoBackend.Models
         public DateTime ModifiedDate { get; set; }
 
         public Token Token { get; set; }
+        public int RoleId { get; set; } 
+        public Role Role { get; set; }
     }
 }

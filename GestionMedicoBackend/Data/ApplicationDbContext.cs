@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GestionMedicoBackend.Models;
+using GestionMedicoBackend.Models.Auth;
 
 namespace GestionMedicoBackend.Data
 {
@@ -9,6 +10,9 @@ namespace GestionMedicoBackend.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Token> Tokens { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<RolePermission> RolePermissions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -20,6 +24,9 @@ namespace GestionMedicoBackend.Data
                 entity.Property(e => e.Password).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.Username).IsRequired().HasMaxLength(50);
+                entity.HasOne(e => e.Role)
+                      .WithMany(r => r.Users)
+                      .HasForeignKey(e => e.RoleId);
             });
 
             modelBuilder.Entity<Token>(entity =>
@@ -29,6 +36,31 @@ namespace GestionMedicoBackend.Data
                 entity.HasOne(e => e.User)
                       .WithOne(u => u.Token)
                       .HasForeignKey<Token>(e => e.UserId);
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Permission>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<RolePermission>(entity =>
+            {
+                entity.HasKey(rp => rp.Id);
+
+                entity.HasOne(rp => rp.Role)
+                      .WithMany(r => r.RolePermissions)
+                      .HasForeignKey(rp => rp.RoleId);
+
+                entity.HasOne(rp => rp.Permission)
+                      .WithMany(p => p.RolePermissions)
+                      .HasForeignKey(rp => rp.PermissionId);
             });
         }
     }

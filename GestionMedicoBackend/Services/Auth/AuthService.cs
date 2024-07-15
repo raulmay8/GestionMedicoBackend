@@ -31,7 +31,6 @@ namespace GestionMedicoBackend.Services.Auth
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
                 return null;
 
-            // Generate JWT token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_configuration["JwtSettings:Key"]);
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -48,7 +47,6 @@ namespace GestionMedicoBackend.Services.Auth
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenValue = tokenHandler.WriteToken(token);
 
-            // Save token to the database
             var userToken = new Token
             {
                 Value = tokenValue,

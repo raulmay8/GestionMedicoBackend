@@ -25,27 +25,36 @@ public class UserService
     public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
     {
         return await _context.Users
-            .Select(user => new UserDto
-            {
-                Id = user.Id,
-                Username = user.Username,
-                Email = user.Email,
-                Status = user.Status
-            })
-            .ToListAsync();
+        .Include(u => u.Role)
+        .Select(user => new UserDto
+        {
+            Id = user.Id,
+            Username = user.Username,
+            Email = user.Email,
+            Status = user.Status,
+            RoleId = user.Role.Id,
+            RoleName = user.Role.Name
+        })
+        .ToListAsync();
     }
 
     public async Task<UserDto> GetUserByIdAsync(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        if (user == null) return null;
+        var user = await _context.Users
+        .Include(u => u.Role)
+        .FirstOrDefaultAsync(u => u.Id == id);
+
+        if (user == null) throw new KeyNotFoundException("Usuario no encontrado");
+
 
         return new UserDto
         {
             Id = user.Id,
             Username = user.Username,
             Email = user.Email,
-            Status = user.Status
+            Status = user.Status,
+            RoleId = user.Role.Id,
+            RoleName = user.Role.Name
         };
     }
 
@@ -62,12 +71,19 @@ public class UserService
             throw new Exception("El correo electrónico ya está en uso.");
         }
 
+        var role = await _context.Roles.FindAsync(createUserDto.RoleId);
+        if (role == null)
+        {
+            throw new KeyNotFoundException("El rol especificado no existe.");
+        }
+
         var user = new User
         {
             Username = createUserDto.Username,
             Email = createUserDto.Email,
             Password = HashHelper.HashPassword(createUserDto.Password),
-            Status = false, 
+            Status = false,
+            RoleId = createUserDto.RoleId,
             CreatedDate = DateTime.UtcNow,
             ModifiedDate = DateTime.UtcNow
         };
@@ -75,16 +91,13 @@ public class UserService
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
 
-        // Generar y asignar el token al usuario
         var token = await _tokenServices.GenerateTokenAsync(user);
 
         // Generar el enlace de confirmación
         var confirmationLink = $"http://localhost/api/users/confirm-account?token={token}";
-        var subject = "Confirma tu cuenta";
-        var message = $"Por favor confirma tu cuenta haciendo clic en el siguiente enlace: <a href='{confirmationLink}'>Confirmar cuenta</a>";
 
         // Enviar correo de confirmación
-        await _emailServices.SendEmailAsync(user.Email, subject, message);
+        await _emailServices.SendConfirmationEmailAsync(user.Email, user.Username, confirmationLink);
 
         return new UserDto
         {
@@ -92,14 +105,18 @@ public class UserService
             Username = user.Username,
             Email = user.Email,
             Status = user.Status,
-            Token = token
+            RoleId = user.RoleId,
+            RoleName = role.Name,
         };
     }
 
     public async Task<bool> UpdateUserAsync(int id, UpdateUserDto updateUserDto)
     {
         var user = await _context.Users.FindAsync(id);
-        if (user == null) return false;
+        if (user == null)
+        {
+            throw new KeyNotFoundException("Usuario no encontrado");
+        }
 
         if (user.Username != updateUserDto.Username && await _context.Users.AnyAsync(u => u.Username == updateUserDto.Username))
         {
@@ -111,13 +128,15 @@ public class UserService
             throw new Exception("El correo electrónico ya está en uso.");
         }
 
+        var role = await _context.Roles.FindAsync(updateUserDto.RoleId);
+        if (role == null)
+        {
+            throw new KeyNotFoundException("El rol especificado no existe.");
+        }
+
         user.Username = updateUserDto.Username;
         user.Email = updateUserDto.Email;
-        user.Status = updateUserDto.Status;
-        if (!string.IsNullOrEmpty(updateUserDto.Password))
-        {
-            user.Password = HashHelper.HashPassword(updateUserDto.Password);
-        }
+        user.RoleId = updateUserDto.RoleId;
         user.ModifiedDate = DateTime.UtcNow;
 
         _context.Users.Update(user);
@@ -128,7 +147,7 @@ public class UserService
     public async Task<bool> DeleteUserAsync(int id)
     {
         var user = await _context.Users.FindAsync(id);
-        if (user == null) return false;
+        if (user == null) throw new KeyNotFoundException("Usuario no encontrado");
 
         _context.Users.Remove(user);
         await _context.SaveChangesAsync();
@@ -138,7 +157,7 @@ public class UserService
     public async Task<bool> ToggleUserStatusAsync(int id)
     {
         var user = await _context.Users.FindAsync(id);
-        if (user == null) return false;
+        if (user == null) throw new KeyNotFoundException("Usuario no encontrado");
 
         user.Status = !user.Status;
         user.ModifiedDate = DateTime.UtcNow;
@@ -154,10 +173,7 @@ public class UserService
             .Include(t => t.User)
             .FirstOrDefaultAsync(t => t.Value == token);
 
-        if (userToken == null)
-        {
-            return false;
-        }
+        if (userToken == null) throw new ApplicationException("Token inválido o expirado");
 
         var user = userToken.User;
         user.Status = true; 
@@ -173,7 +189,7 @@ public class UserService
     public async Task<bool> ConfirmEmailAsync(int userId)
     {
         var user = await _context.Users.FindAsync(userId);
-        if (user == null) return false;
+        if (user == null) throw new KeyNotFoundException("Usuario no encontrado");
 
         user.Status = true; 
         user.ModifiedDate = DateTime.UtcNow;

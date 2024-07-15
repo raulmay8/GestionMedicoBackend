@@ -26,19 +26,41 @@ namespace GestionMedicoBackend.Controllers.User
         [HttpGet("{id}")]
         public async Task<ActionResult<UserDto>> GetUser(int id)
         {
-            var user = await _userService.GetUserByIdAsync(id);
-            if (user == null) return NotFound();
-
-            return Ok(user);
+            try
+            {
+                var user = await _userService.GetUserByIdAsync(id);
+                return Ok(user);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpPost]
         public async Task<ActionResult<UserDto>> CreateUser(CreateUserDto createUserDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
                 var user = await _userService.CreateUserAsync(createUserDto);
                 return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+            }
+            catch (ApplicationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
             }
             catch (Exception ex)
             {
@@ -49,12 +71,25 @@ namespace GestionMedicoBackend.Controllers.User
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, UpdateUserDto updateUserDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
                 var result = await _userService.UpdateUserAsync(id, updateUserDto);
-                if (!result) return NotFound();
+                if (!result) return NotFound(new { message = "Usuario no encontrado" });
 
-                return NoContent();
+                return Ok(new { message = "Usuario actualizado correctamente." });
+            }
+            catch (ApplicationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
             }
             catch (Exception ex)
             {
@@ -65,28 +100,61 @@ namespace GestionMedicoBackend.Controllers.User
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            var result = await _userService.DeleteUserAsync(id);
-            if (!result) return NotFound();
+            try
+            {
+                var result = await _userService.DeleteUserAsync(id);
+                if (!result) return NotFound();
 
-            return NoContent();
+                return Ok(new { message = "Usuario eliminado correctamente." });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpPatch("{id}/change-status")]
         public async Task<IActionResult> ToggleUserStatus(int id)
         {
-            var result = await _userService.ToggleUserStatusAsync(id);
-            if (!result) return NotFound();
+            try
+            {
+                var result = await _userService.ToggleUserStatusAsync(id);
+                if (!result) return NotFound();
 
-            return NoContent();
+                return Ok(new { message = "Status del usuario actualizado correctamente." });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpGet("confirm-account")]
         public async Task<IActionResult> ConfirmAccount([FromQuery] string token)
         {
-            var result = await _userService.ConfirmAccountAsync(token);
-            if (!result) return BadRequest(new { message = "Token inválido o expirado." });
+            try
+            {
+                var result = await _userService.ConfirmAccountAsync(token);
+                if (!result) return BadRequest(new { message = "Token inválido o expirado." });
 
-            return Ok(new { message = "Cuenta confirmada exitosamente." });
+                return Ok(new { message = "Cuenta confirmada exitosamente." });
+            }
+            catch (ApplicationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
     }
