@@ -47,17 +47,7 @@ namespace GestionMedicoBackend.Services.Auth
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenValue = tokenHandler.WriteToken(token);
 
-            var userToken = new Token
-            {
-                Value = tokenValue,
-                CreatedAt = DateTime.UtcNow,
-                UserId = user.Id
-            };
-            _context.Tokens.Add(userToken);
-            await _context.SaveChangesAsync();
-
-            user.Token = userToken;
-
+            user.Token = new Token { Value = tokenValue };
             return user;
         }
     }

@@ -27,11 +27,7 @@ namespace GestionMedicoBackend.Controllers.Auth
 
             return Ok(new
             {
-                Id = user.Id,
-                Username = user.Username,
-                Email = user.Email,
-                Token = user.Token.Value,
-                Status = user.Status
+                Token = user.Token.Value
             });
         }
     }

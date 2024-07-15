@@ -16,6 +16,7 @@ builder.Services.AddScoped<TokenServices>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<IRoleService, RolService>();
 builder.Services.AddScoped<IPermissionService, PermissionService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IRolePermissionService, RolePermissionService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -46,7 +47,10 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var app = builder.Build();
+
+app.UseCors(o => o.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
