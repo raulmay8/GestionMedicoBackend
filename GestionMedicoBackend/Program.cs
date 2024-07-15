@@ -12,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<EmailServices>();
 builder.Services.AddScoped<TokenServices>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<ConsultorioService>();
+builder.Services.AddScoped<MedicoService>();
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
