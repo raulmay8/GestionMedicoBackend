@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionMedicoBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df23046e40e9b90fd4cf41a9216452c2580ba9ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9acec6c8229239f5b5e3ca402090f05e140e18da")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionMedicoBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionMedicoBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
