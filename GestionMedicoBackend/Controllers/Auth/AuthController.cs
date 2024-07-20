@@ -20,15 +20,19 @@ namespace GestionMedicoBackend.Controllers.Auth
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            var user = await _authService.Authenticate(model.Email, model.Password);
-
-            if (user == null)
-                return BadRequest(new { message = "Email or password is incorrect" });
-
-            return Ok(new
+            try
             {
-                Token = user.Token.Value
-            });
+                var user = await _authService.Authenticate(model.Email, model.Password);
+
+                return Ok(new
+                {
+                    Token = user.Token.Value
+                });
+            }
+            catch (ApplicationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
     }
 }

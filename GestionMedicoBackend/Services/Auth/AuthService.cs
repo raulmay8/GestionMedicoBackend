@@ -28,8 +28,14 @@ namespace GestionMedicoBackend.Services.Auth
         {
             var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == email);
 
-            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
-                return null;
+            if (user == null)
+                throw new ApplicationException("Email o contraseña incorrecta");
+
+            if (!BCrypt.Net.BCrypt.Verify(password, user.Password))
+                throw new ApplicationException("Email o contraseña incorrecta");
+
+            if (!user.Status)
+                throw new ApplicationException("Cuenta no confirmada");
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_configuration["JwtSettings:Key"]);

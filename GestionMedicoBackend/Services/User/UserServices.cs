@@ -210,11 +210,22 @@ public class UserService
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         if (user == null) throw new KeyNotFoundException("Usuario no encontrado");
 
+        if (!user.Status) throw new ApplicationException("Usuario no confirmado");
+
+        var existingTokens = await _context.Tokens.Where(t => t.UserId == user.Id).ToListAsync();
+        if (existingTokens.Any())
+        {
+            _context.Tokens.RemoveRange(existingTokens);
+            await _context.SaveChangesAsync();
+        }
+
         var token = await _tokenServices.GenerateTokenAsync(user);
-        var resetLink = $"http://localhost:3000/reset-password?token={token}"; 
+        var resetLink = $"http://localhost:3000/reset-password?token={token}";
 
         await _emailServices.SendPasswordResetEmailAsync(user.Email, user.Username, resetLink);
     }
+
+
 
     public async Task<bool> ResetPasswordAsync(string token, string newPassword)
     {
@@ -234,5 +245,6 @@ public class UserService
         await _context.SaveChangesAsync();
         return true;
     }
+
 
 }

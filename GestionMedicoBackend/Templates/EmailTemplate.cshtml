@@ -8,39 +8,94 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f7;
+            color: #51545e;
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: none;
         }
-        .container {
-            margin: 0 auto;
+
+        .email-wrapper {
+            width: 100%;
+            background-color: #f4f4f7;
             padding: 20px;
+        }
+
+        .email-content {
+            width: 100%;
             max-width: 600px;
-            border: 1px solid #ddd;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .email-header {
+            background-color: #408D86;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .email-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .email-footer {
+            text-align: center;
+            padding: 20px;
+            color: #a8aaaf;
+            font-size: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px auto;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #408D86;
             border-radius: 5px;
+            text-decoration: none;
         }
-        .header {
+
+        .content-cell {
+            padding: 35px;
+        }
+
+        .sub {
+            color: #6b6e76;
+            font-size: 12px;
             text-align: center;
         }
-        .content {
-            margin-top: 20px;
-        }
+
         .footer {
-            margin-top: 20px;
             text-align: center;
-            color: #999;
+            padding: 20px;
+            color: #a8aaaf;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Confirma tu Cuenta</h1>
-        </div>
-        <div class="content">
-            <p>Hola @Model.Username,</p>
-            <p>Por favor confirma tu cuenta haciendo clic en el siguiente enlace:</p>
-            <p><a href="@Model.ConfirmationLink">Confirmar cuenta</a></p>
-        </div>
-        <div class="footer">
-            <p>&copy; 2024 Gestión médico. Todos los derechos reservados.</p>
+    <div class="email-wrapper">
+        <div class="email-content">
+            <div class="email-header">
+                <h1>Confirma tu Cuenta</h1>
+            </div>
+            <div class="email-body">
+                <p>Hola @Model.Username,</p>
+                <p>Por favor confirma tu cuenta haciendo clic en el siguiente botón:</p>
+                <p><a href="@Model.ConfirmationLink" class="button">Confirmar cuenta</a></p>
+                <p>Si tienes alguna pregunta, puedes comunicarte con nosotros a través de nuestro formulario de contacto</p>
+                <p>El equipo de Gestión Médico</p>
+            </div>
+            <div class="email-footer">
+                <p class="sub">&copy; 2024 Gestión médico. Todos los derechos reservados.</p>
+                <p class="sub">Contoso - 1234 Avenida Cancun - Cancun, QRoo - 77500</p>
+            </div>
         </div>
     </div>
 </body>

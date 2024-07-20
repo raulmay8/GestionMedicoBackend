@@ -65,12 +65,13 @@ namespace GestionMedicoBackend.Services.User
             var templateModel = new EmailTemplateModel
             {
                 Username = username,
-                ConfirmationLink = resetLink 
+                ConfirmationLink = resetLink
             };
 
             string message = await _emailTemplateService.RenderTemplateAsync("PasswordResetTemplate", templateModel);
             await SendEmailAsync(toEmail, "Restablece tu contraseña", message);
         }
+
 
 
 
