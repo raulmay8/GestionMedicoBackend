@@ -444,3 +444,15 @@ C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Deb
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\refs\System.Xml.XPath.dll
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\refs\System.Xml.XPath.XDocument.dll
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\refs\WindowsBase.dll
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.csproj.AssemblyReference.cache
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.AssemblyInfoInputs.cache
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.AssemblyInfo.cs
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.csproj.CoreCompileInputs.cache
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.RazorAssemblyInfo.cache
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.RazorAssemblyInfo.cs
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.dll
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\refint\GestionMedicoBackend.dll
+C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.pdb
