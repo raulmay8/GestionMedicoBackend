@@ -14,14 +14,42 @@ namespace GestionMedicoBackend.Services.Auth
             _context = context;
         }
 
-        public async Task<IEnumerable<Role>> GetAllRolesAsync()
+        public async Task<IEnumerable<RoleDto>> GetAllRolesAsync()
         {
-            return await _context.Roles.ToListAsync();
+            return await _context.Roles
+                .Include(r => r.Users)
+                .Include(r => r.RolePermissions)
+                    .ThenInclude(rp => rp.Permission)
+                .Select(r => new RoleDto
+                {
+                    Id = r.Id,
+                    Name = r.Name,
+                    UserNames = r.Users.Select(u => u.Username).ToList(),
+                    Permissions = r.RolePermissions.Select(rp => rp.Permission.Name).ToList()
+                })
+                .ToListAsync();
         }
 
-        public async Task<Role> GetRoleByIdAsync(int id)
+        public async Task<RoleDto> GetRoleByIdAsync(int id)
         {
-            return await _context.Roles.FindAsync(id);
+            var role = await _context.Roles
+                .Include(r => r.Users)
+                .Include(r => r.RolePermissions)
+                    .ThenInclude(rp => rp.Permission)
+                .FirstOrDefaultAsync(r => r.Id == id);
+
+            if (role == null)
+            {
+                throw new KeyNotFoundException("Role no encontrado");
+            }
+
+            return new RoleDto
+            {
+                Id = role.Id,
+                Name = role.Name,
+                UserNames = role.Users.Select(u => u.Username).ToList(),
+                Permissions = role.RolePermissions.Select(rp => rp.Permission.Name).ToList()
+            };
         }
 
         public async Task<Role> CreateRoleAsync(CreateRoleDto createRoleDto)
@@ -41,7 +69,7 @@ namespace GestionMedicoBackend.Services.Auth
             var role = await _context.Roles.FindAsync(id);
             if (role == null)
             {
-                throw new KeyNotFoundException("Role not found");
+                throw new KeyNotFoundException("Rol no encontrado");
             }
 
             role.Name = updateRoleDto.Name;
@@ -56,7 +84,7 @@ namespace GestionMedicoBackend.Services.Auth
             var role = await _context.Roles.FindAsync(id);
             if (role == null)
             {
-                throw new KeyNotFoundException("Role not found");
+                throw new KeyNotFoundException("Rol no encontrado");
             }
 
             _context.Roles.Remove(role);

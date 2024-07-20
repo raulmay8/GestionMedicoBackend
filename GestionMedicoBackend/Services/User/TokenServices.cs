@@ -30,15 +30,15 @@ namespace GestionMedicoBackend.Services.User
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
+        new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
 
             var token = new JwtSecurityToken(
                 issuer: jwtSettings["Issuer"],
                 audience: jwtSettings["Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(Convert.ToDouble(jwtSettings["DurationInMinutes"])),
+                expires: DateTime.UtcNow.AddMinutes(Convert.ToDouble(jwtSettings["DurationInMinutes"])), 
                 signingCredentials: creds);
 
             var tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
@@ -55,5 +55,6 @@ namespace GestionMedicoBackend.Services.User
 
             return tokenValue;
         }
+
     }
 }

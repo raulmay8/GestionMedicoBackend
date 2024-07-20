@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 using System;
 using GestionMedicoBackend.Helpers;
 using GestionMedicoBackend.Services.User;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 public class UserService
 {
@@ -70,8 +74,10 @@ public class UserService
         {
             throw new Exception("El correo electrónico ya está en uso.");
         }
+        //POR DEFECTO AL CREAR USUARIO SERÁ PACIENTE
+        int roleId = createUserDto.RoleId ?? 5;
 
-        var role = await _context.Roles.FindAsync(createUserDto.RoleId);
+        var role = await _context.Roles.FindAsync(roleId);
         if (role == null)
         {
             throw new KeyNotFoundException("El rol especificado no existe.");
@@ -83,7 +89,7 @@ public class UserService
             Email = createUserDto.Email,
             Password = HashHelper.HashPassword(createUserDto.Password),
             Status = false,
-            RoleId = createUserDto.RoleId,
+            RoleId = roleId,
             CreatedDate = DateTime.UtcNow,
             ModifiedDate = DateTime.UtcNow
         };
@@ -105,7 +111,7 @@ public class UserService
             Username = user.Username,
             Email = user.Email,
             Status = user.Status,
-            RoleId = user.RoleId,
+            RoleId = role.Id,
             RoleName = role.Name,
         };
     }
@@ -198,4 +204,35 @@ public class UserService
         await _context.SaveChangesAsync();
         return true;
     }
+
+    public async Task RequestPasswordResetAsync(string email)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        if (user == null) throw new KeyNotFoundException("Usuario no encontrado");
+
+        var token = await _tokenServices.GenerateTokenAsync(user);
+        var resetLink = $"http://localhost:3000/reset-password?token={token}"; 
+
+        await _emailServices.SendPasswordResetEmailAsync(user.Email, user.Username, resetLink);
+    }
+
+    public async Task<bool> ResetPasswordAsync(string token, string newPassword)
+    {
+        var userToken = await _context.Tokens
+            .Include(t => t.User)
+            .FirstOrDefaultAsync(t => t.Value == token);
+
+        if (userToken == null)
+            throw new ApplicationException("Token inválido o no encontrado");
+
+        var user = userToken.User;
+        user.Password = HashHelper.HashPassword(newPassword);
+        user.ModifiedDate = DateTime.UtcNow;
+
+        _context.Users.Update(user);
+        _context.Tokens.Remove(userToken);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
 }

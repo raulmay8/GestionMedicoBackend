@@ -5,10 +5,7 @@ namespace GestionMedicoBackend.Services.Auth
 {
     public interface IRolePermissionService
     {
-        Task<RolePermission> CreateRolePermissionAsync(CreateRolePermissionDto createRolePermissionDto);
-        Task<IEnumerable<RolePermission>> GetAllRolePermissionsAsync();
-        Task<RolePermission> GetRolePermissionByIdAsync(int id);
-        Task<RolePermission> UpdateRolePermissionAsync(int id, UpdateRolePermissionDto updateRolePermissionDto);
-        Task<bool> DeleteRolePermissionAsync(int id);
+        Task<string> CreateRolePermissionAsync(CreateRolePermissionDto createRolePermissionDto);
+        Task<string> DeleteRolePermissionAsync(int id);
     }
 }

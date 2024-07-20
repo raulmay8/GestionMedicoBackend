@@ -13,17 +13,33 @@ namespace GestionMedicoBackend.Services.Auth
         {
             _context = context;
         }
-        public async Task<IEnumerable<Permission>> GetAllPermissionsAsync()
+        public async Task<IEnumerable<PermissionsDto>> GetAllPermissionsAsync()
         {
-            return await _context.Permissions.ToListAsync();
+            return await _context.Permissions
+                .Select(p => new PermissionsDto
+                {
+                    Id = p.Id,
+                    Name = p.Name
+                })
+                .ToListAsync();
         }
 
-        public async Task<Permission> GetPermissionByIdAsync(int id)
+        public async Task<PermissionsDto> GetPermissionByIdAsync(int id)
         {
-            return await _context.Permissions.FindAsync(id);
+            var permission = await _context.Permissions.FindAsync(id);
+            if (permission == null)
+            {
+                throw new KeyNotFoundException("Permiso no encontrado");
+            }
+
+            return new PermissionsDto
+            {
+                Id = permission.Id,
+                Name = permission.Name
+            };
         }
 
-        public async Task<Permission> CreatePermissionAsync(CreatePermissionsDto createPermissionsDto)
+        public async Task<PermissionsDto> CreatePermissionAsync(CreatePermissionsDto createPermissionsDto)
         {
             var permission = new Permission
             {
@@ -32,22 +48,32 @@ namespace GestionMedicoBackend.Services.Auth
 
             _context.Permissions.Add(permission);
             await _context.SaveChangesAsync();
-            return permission;
+
+            return new PermissionsDto
+            {
+                Id = permission.Id,
+                Name = permission.Name
+            };
         }
 
-        public async Task<Permission> UpdatePermissionAsync(int id, UpdatePermissionsDto updatePermissionsDto)
+        public async Task<PermissionsDto> UpdatePermissionAsync(int id, UpdatePermissionsDto updatePermissionsDto)
         {
             var permission = await _context.Permissions.FindAsync(id);
             if (permission == null)
             {
-                throw new KeyNotFoundException("Permission not found");
+                throw new KeyNotFoundException("Permiso no encontrado");
             }
 
             permission.Name = updatePermissionsDto.Name;
 
             _context.Permissions.Update(permission);
             await _context.SaveChangesAsync();
-            return permission;
+
+            return new PermissionsDto
+            {
+                Id = permission.Id,
+                Name = permission.Name
+            };
         }
 
         public async Task<bool> DeletePermissionAsync(int id)
@@ -55,13 +81,12 @@ namespace GestionMedicoBackend.Services.Auth
             var permission = await _context.Permissions.FindAsync(id);
             if (permission == null)
             {
-                throw new KeyNotFoundException("Permission not found");
+                throw new KeyNotFoundException("Permiso no encontrado");
             }
 
             _context.Permissions.Remove(permission);
             await _context.SaveChangesAsync();
             return true;
         }
-
     }
 }

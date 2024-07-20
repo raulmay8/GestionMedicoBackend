@@ -156,6 +156,41 @@ namespace GestionMedicoBackend.Controllers.User
                 return BadRequest(new { message = ex.Message });
             }
         }
+        [HttpPost("request-password-reset")]
+        public async Task<IActionResult> RequestPasswordReset([FromBody] RequestPasswordResetDto requestPasswordResetDto)
+        {
+            try
+            {
+                await _userService.RequestPasswordResetAsync(requestPasswordResetDto.Email);
+                return Ok(new { message = "Correo de restablecimiento de contraseña enviado." });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto resetPasswordDto)
+        {
+            try
+            {
+                var result = await _userService.ResetPasswordAsync(resetPasswordDto.Token, resetPasswordDto.NewPassword);
+                return Ok(new { message = "Contraseña restablecida correctamente." });
+            }
+            catch (ApplicationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
 
     }
 }

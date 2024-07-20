@@ -17,48 +17,44 @@ namespace GestionMedicoBackend.Controllers.Auth
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Permission>>> GetPermissions()
+        public async Task<ActionResult<IEnumerable<PermissionsDto>>> GetPermissions()
         {
             var permissions = await _permissionService.GetAllPermissionsAsync();
             return Ok(permissions);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Permission>> GetPermission(int id)
+        public async Task<ActionResult<PermissionsDto>> GetPermission(int id)
         {
-            var permission = await _permissionService.GetPermissionByIdAsync(id);
-            if (permission == null)
+            try
             {
-                return NotFound();
+                var permission = await _permissionService.GetPermissionByIdAsync(id);
+                return Ok(permission);
             }
-            return Ok(permission);
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
 
         [HttpPost]
-        public async Task<ActionResult<Permission>> CreatePermission([FromBody] CreatePermissionsDto createPermissionsDto)
+        public async Task<ActionResult<PermissionsDto>> CreatePermission(CreatePermissionsDto createPermissionsDto)
         {
-            try
-            {
-                var newPermission = await _permissionService.CreatePermissionAsync(createPermissionsDto);
-                return CreatedAtAction(nameof(GetPermission), new { id = newPermission.Id }, newPermission);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            var permission = await _permissionService.CreatePermissionAsync(createPermissionsDto);
+            return CreatedAtAction(nameof(GetPermission), new { id = permission.Id }, permission);
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Permission>> UpdatePermission(int id, [FromBody] UpdatePermissionsDto updatePermissionsDto)
+        public async Task<IActionResult> UpdatePermission(int id, UpdatePermissionsDto updatePermissionsDto)
         {
             try
             {
-                var updatedPermission = await _permissionService.UpdatePermissionAsync(id, updatePermissionsDto);
-                return Ok(updatedPermission);
+                var permission = await _permissionService.UpdatePermissionAsync(id, updatePermissionsDto);
+                return Ok(permission);
             }
-            catch (Exception ex)
+            catch (KeyNotFoundException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return NotFound(new { message = ex.Message });
             }
         }
 
@@ -75,11 +71,10 @@ namespace GestionMedicoBackend.Controllers.Auth
 
                 return NoContent();
             }
-            catch (Exception ex)
+            catch (KeyNotFoundException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return NotFound(new { message = ex.Message });
             }
         }
-
     }
 }

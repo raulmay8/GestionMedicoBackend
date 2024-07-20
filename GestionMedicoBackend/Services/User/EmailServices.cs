@@ -59,5 +59,20 @@ namespace GestionMedicoBackend.Services.User
             string message = await _emailTemplateService.RenderTemplateAsync("EmailTemplate", templateModel);
             await SendEmailAsync(toEmail, "Confirma tu cuenta", message);
         }
+
+        public async Task SendPasswordResetEmailAsync(string toEmail, string username, string resetLink)
+        {
+            var templateModel = new EmailTemplateModel
+            {
+                Username = username,
+                ConfirmationLink = resetLink 
+            };
+
+            string message = await _emailTemplateService.RenderTemplateAsync("PasswordResetTemplate", templateModel);
+            await SendEmailAsync(toEmail, "Restablece tu contraseña", message);
+        }
+
+
+
     }
 }

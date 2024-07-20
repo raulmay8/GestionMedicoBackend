@@ -29,9 +29,7 @@ namespace GestionMedicoBackend.DTOs.User
         [MinLength(4, ErrorMessage = "La contraseña debe tener al menos 4 caracteres.")]
         public string Password { get; set; }
 
-
-        [Required(ErrorMessage = "El ID del rol es requerido.")]
-        public int RoleId { get; set; }
+        public int? RoleId { get; set; }
     }
 
     public class UpdateUserDto
@@ -49,5 +47,22 @@ namespace GestionMedicoBackend.DTOs.User
 
         [Required(ErrorMessage = "El ID del rol es requerido.")]
         public int RoleId { get; set; }
+    }
+    public class RequestPasswordResetDto
+    {
+        [Required(ErrorMessage = "El correo electrónico es requerido.")]
+        [EmailAddress(ErrorMessage = "El correo electrónico no es válido.")]
+        public string Email { get; set; }
+    }
+
+
+    public class ResetPasswordDto
+    {
+        [Required(ErrorMessage = "El token es requerido.")]
+        public string Token { get; set; }
+
+        [Required(ErrorMessage = "La nueva contraseña es requerida.")]
+        [MinLength(4, ErrorMessage = "La nueva contraseña debe tener al menos 4 caracteres.")]
+        public string NewPassword { get; set; }
     }
 }
