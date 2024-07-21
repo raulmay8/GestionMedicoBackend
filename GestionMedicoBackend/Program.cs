@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using GestionMedicoBackend.Services.Auth;
+using GestionMedicoBackend.Services.Medic;
+using GestionMedicoBackend.Services.Patient;
+using GestionMedicoBackend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,10 +17,15 @@ builder.Services.AddScoped<EmailServices>();
 builder.Services.AddScoped<EmailTemplateService>();
 builder.Services.AddScoped<TokenServices>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<MedicServices>();
+builder.Services.AddScoped<PatientServices>();
+builder.Services.AddScoped<AppointmentServices>();
 builder.Services.AddScoped<IRoleService, RolService>();
 builder.Services.AddScoped<IPermissionService, PermissionService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IRolePermissionService, RolePermissionService>();
+
+builder.Services.AddHostedService<MedicAvailabilityService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

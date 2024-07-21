@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GestionMedicoBackend.Data.Migrations
+namespace GestionMedicoBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240714210126_AddRolesAndPermissions2")]
-    partial class AddRolesAndPermissions2
+    [Migration("20240721130536_inicio")]
+    partial class inicio
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,33 @@ namespace GestionMedicoBackend.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.Appointments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("MedicId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MedicId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("Appointments");
+                });
 
             modelBuilder.Entity("GestionMedicoBackend.Models.Auth.Permission", b =>
                 {
@@ -82,6 +109,71 @@ namespace GestionMedicoBackend.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("RolePermissions");
+                });
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Availability")
+                        .HasColumnType("bit");
+
+                    b.Property<DateOnly>("DateGraduate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("ProfessionalId")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("School")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("YearExperience")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Medics");
+                });
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.Patient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Occupation")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Picture")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("GestionMedicoBackend.Models.Token", b =>
@@ -158,6 +250,25 @@ namespace GestionMedicoBackend.Data.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("GestionMedicoBackend.Models.Appointments", b =>
+                {
+                    b.HasOne("GestionMedicoBackend.Models.Medic", "Medic")
+                        .WithMany("Appointments")
+                        .HasForeignKey("MedicId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("GestionMedicoBackend.Models.Patient", "Patient")
+                        .WithMany("Appointments")
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Medic");
+
+                    b.Navigation("Patient");
+                });
+
             modelBuilder.Entity("GestionMedicoBackend.Models.Auth.RolePermission", b =>
                 {
                     b.HasOne("GestionMedicoBackend.Models.Auth.Permission", "Permission")
@@ -175,6 +286,28 @@ namespace GestionMedicoBackend.Data.Migrations
                     b.Navigation("Permission");
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
+                {
+                    b.HasOne("GestionMedicoBackend.Models.User", "User")
+                        .WithMany("Medics")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.Patient", b =>
+                {
+                    b.HasOne("GestionMedicoBackend.Models.User", "User")
+                        .WithMany("Patients")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("GestionMedicoBackend.Models.Token", b =>
@@ -211,8 +344,22 @@ namespace GestionMedicoBackend.Data.Migrations
                     b.Navigation("Users");
                 });
 
+            modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
+                {
+                    b.Navigation("Appointments");
+                });
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.Patient", b =>
+                {
+                    b.Navigation("Appointments");
+                });
+
             modelBuilder.Entity("GestionMedicoBackend.Models.User", b =>
                 {
+                    b.Navigation("Medics");
+
+                    b.Navigation("Patients");
+
                     b.Navigation("Token")
                         .IsRequired();
                 });

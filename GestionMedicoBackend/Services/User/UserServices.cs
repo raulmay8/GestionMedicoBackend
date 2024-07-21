@@ -64,7 +64,6 @@ public class UserService
 
     public async Task<UserDto> CreateUserAsync(CreateUserDto createUserDto)
     {
-        // Verificar unicidad
         if (await _context.Users.AnyAsync(u => u.Username == createUserDto.Username))
         {
             throw new Exception("El nombre de usuario ya está en uso.");
@@ -75,7 +74,7 @@ public class UserService
             throw new Exception("El correo electrónico ya está en uso.");
         }
         //POR DEFECTO AL CREAR USUARIO SERÁ PACIENTE
-        int roleId = createUserDto.RoleId ?? 5;
+        int roleId = createUserDto.RoleId ?? 1;
 
         var role = await _context.Roles.FindAsync(roleId);
         if (role == null)

@@ -34,5 +34,8 @@ namespace GestionMedicoBackend.Models
         public Token Token { get; set; }
         public int RoleId { get; set; } 
         public Role Role { get; set; }
+
+        public ICollection<Patient> Patients { get; set; }
+        public ICollection<Medic> Medics { get; set; }
     }
 }
