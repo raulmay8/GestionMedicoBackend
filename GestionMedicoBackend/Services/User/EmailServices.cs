@@ -79,7 +79,7 @@ namespace GestionMedicoBackend.Services.User
             var templateModel = new AppointmentTemplateModel
             {
                 MedicName = appointment.Medic.User.Username,
-                PatientName = appointment.Patient?.User?.Username ?? appointment.Nombre + " " + appointment.Apellido,
+                Nombre = appointment.Nombre,
                 FechaCita = appointment.FechaCita,
                 Reason = appointment.Reason
             };

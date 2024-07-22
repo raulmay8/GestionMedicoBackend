@@ -124,10 +124,15 @@ public class AppointmentServices
             _context.Appointments.Add(appointment);
             await _context.SaveChangesAsync();
 
-            // Enviar correo de confirmación
+            // Enviar correo de confirmación con el dato Nombre
             if (patient != null)
             {
                 await _emailServices.SendAppointmentConfirmationEmailAsync(patient.User.Email, appointment);
+            }
+            else
+            {
+                // Enviar correo a la dirección proporcionada en el campo Correo
+                await _emailServices.SendAppointmentConfirmationEmailAsync(createAppointmentDto.Correo, appointment);
             }
 
             return "Cita creada con éxito.";
