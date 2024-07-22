@@ -78,7 +78,6 @@ namespace GestionMedicoBackend.Controllers
             return Ok(new { message = result });
         }
 
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAppointment(int id)
         {

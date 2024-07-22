@@ -1,10 +1,10 @@
-﻿@model GestionMedicoBackend.Models.PasswordTemplate
+﻿@model GestionMedicoBackend.Models.AppointmentTemplateModel
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Confirmar Cuenta</title>
+    <title>Confirmación de Cita</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -83,14 +83,15 @@
     <div class="email-wrapper">
         <div class="email-content">
             <div class="email-header">
-                <h1>Restablecer tu Contraseña</h1>
+                <h1>Confirmación de Cita</h1>
             </div>
             <div class="email-body">
-                <p>Hola @Model.Username,</p>
-                <p>Hemos recibido una solicitud para restablecer tu contraseña. Si no la solicitaste, por favor ignora este correo.</p>
-                <p>Para restablecer tu contraseña, haz clic en el siguiente enlace:</p>
-                <p><a href="@Model.ResetLink" class="button">Restablecer Contraseña</a></p>
-                <p>Si tienes alguna pregunta, puedes comunicarte con nosotros a través de nuestro formulario de contacto</p>
+                <p>Hola @Model.PatientName,</p>
+                <p>Tu cita ha sido programada exitosamente. Aquí están los detalles de tu cita:</p>
+                <p><strong>Médico:</strong> @Model.MedicName</p>
+                <p><strong>Fecha y Hora:</strong> @Model.FechaCita.ToString("f")</p>
+                <p><strong>Razón:</strong> @Model.Reason</p>
+                <p>Si tienes alguna pregunta, puedes comunicarte con nosotros a través de nuestro formulario de contacto.</p>
                 <p>El equipo de Gestión Médico</p>
             </div>
             <div class="email-footer">

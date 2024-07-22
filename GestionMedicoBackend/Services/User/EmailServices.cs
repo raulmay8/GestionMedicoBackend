@@ -10,6 +10,8 @@ namespace GestionMedicoBackend.Services.User
     {
         Task SendEmailAsync(string toEmail, string subject, string message);
         Task SendConfirmationEmailAsync(string toEmail, string username, string confirmationLink);
+        Task SendPasswordResetEmailAsync(string toEmail, string username, string resetLink);
+        Task SendAppointmentConfirmationEmailAsync(string toEmail, Appointments appointment);
     }
 
     public class EmailServices : IEmailService
@@ -62,18 +64,28 @@ namespace GestionMedicoBackend.Services.User
 
         public async Task SendPasswordResetEmailAsync(string toEmail, string username, string resetLink)
         {
-            var templateModel = new EmailTemplateModel
+            var templateModel = new PasswordTemplate
             {
                 Username = username,
-                ConfirmationLink = resetLink
+                ResetLink = resetLink
             };
 
             string message = await _emailTemplateService.RenderTemplateAsync("PasswordResetTemplate", templateModel);
             await SendEmailAsync(toEmail, "Restablece tu contraseña", message);
         }
 
+        public async Task SendAppointmentConfirmationEmailAsync(string toEmail, Appointments appointment)
+        {
+            var templateModel = new AppointmentTemplateModel
+            {
+                MedicName = appointment.Medic.User.Username,
+                PatientName = appointment.Patient?.User?.Username ?? appointment.Nombre + " " + appointment.Apellido,
+                FechaCita = appointment.FechaCita,
+                Reason = appointment.Reason
+            };
 
-
-
+            string message = await _emailTemplateService.RenderTemplateAsync("AppointmentTemplate", templateModel);
+            await SendEmailAsync(toEmail, "Confirmación de Cita", message);
+        }
     }
 }

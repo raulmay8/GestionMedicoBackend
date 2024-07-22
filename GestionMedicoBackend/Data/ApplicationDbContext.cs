@@ -16,6 +16,7 @@ namespace GestionMedicoBackend.Data
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Medic> Medics { get; set; }
         public DbSet<Appointments> Appointments { get; set; }
+        public DbSet<Specialty> Specialties { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -105,14 +106,37 @@ namespace GestionMedicoBackend.Data
             {
                 entity.HasKey(a => a.Id);
                 entity.Property(a => a.Reason).IsRequired().HasColumnType("text");
+                entity.Property(a => a.Nombre).HasMaxLength(100);
+                entity.Property(a => a.Apellido).HasMaxLength(100);
+                entity.Property(a => a.Genero).HasMaxLength(20);
+                entity.Property(a => a.Correo).HasMaxLength(255);
+                entity.Property(a => a.NumeroTelefono).HasMaxLength(15);
+                entity.Property(a => a.Estado).HasMaxLength(100);
+                entity.Property(a => a.CodigoPostal).HasMaxLength(10);
+                entity.Property(a => a.FechaCita).IsRequired();
+
                 entity.HasOne(a => a.Patient)
                       .WithMany(p => p.Appointments)
                       .HasForeignKey(a => a.PatientId)
                       .OnDelete(DeleteBehavior.Restrict);
+
                 entity.HasOne(a => a.Medic)
                       .WithMany(m => m.Appointments)
                       .HasForeignKey(a => a.MedicId)
                       .OnDelete(DeleteBehavior.Restrict);
+
+                // Relación con Specialty
+                entity.HasOne(a => a.Specialty)
+                      .WithMany(s => s.Appointments)
+                      .HasForeignKey(a => a.SpecialtyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<Specialty>(entity =>
+            {
+                entity.HasKey(s => s.Id);
+                entity.Property(s => s.Nombre).IsRequired().HasMaxLength(100);
+                entity.Property(s => s.Descripcion).IsRequired().HasColumnType("text");
             });
         }
     }
