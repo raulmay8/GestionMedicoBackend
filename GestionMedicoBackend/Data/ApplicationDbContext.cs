@@ -17,6 +17,7 @@ namespace GestionMedicoBackend.Data
         public DbSet<Medic> Medics { get; set; }
         public DbSet<Appointments> Appointments { get; set; }
         public DbSet<Specialty> Specialties { get; set; }
+        public DbSet<Horario> Horarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -100,6 +101,11 @@ namespace GestionMedicoBackend.Data
                       .WithMany(u => u.Medics)
                       .HasForeignKey(m => m.UserId)
                       .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(m => m.Horario)
+                       .WithMany(h => h.Medics)
+                       .HasForeignKey(m => m.HorarioId)
+                       .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<Appointments>(entity =>

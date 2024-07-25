@@ -12,6 +12,8 @@ namespace GestionMedicoBackend.DTOs.Medic
         public bool Availability { get; set; }
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public int HorarioId { get; set; }
+        public string HorarioName { get; set; }
     }
 
     public class CreateMedicDto

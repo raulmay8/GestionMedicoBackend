@@ -1,65 +1,137 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\",
+  "WorkspaceRootPath": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\services\\appointment\\appointmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\horario\\horarioservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\horario\\horarioservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\dtos\\horario\\horariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\dtos\\horario\\horariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\controllers\\horario\\horariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\controllers\\horario\\horariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\controllers\\patient\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\controllers\\patient\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\patient\\patientservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\patient\\patientservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\medic\\medicservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\medic\\medicservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\medic\\medic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\medic\\medic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\horario\\horario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\horario\\horario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\auth\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\auth\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\auth\\rolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\auth\\rolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\dtos\\role\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\dtos\\role\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\auth\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\auth\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\dtos\\medic\\medicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\dtos\\medic\\medicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Migrations\\20240724194930_nuevaTablahorarioconMedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GestionMedicoBackend\\Migrations\\20240724194930_nuevaTablahorarioconMedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\specialty\\specialty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\specialty\\specialty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\appointment\\appointmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\appointment\\appointmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\controllers\\appointment\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\controllers\\appointment\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\templates\\appointmenttemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\appointmenttemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\models\\appointmenttemplatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\appointmenttemplatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\services\\user\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\user\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\dtos\\appointments\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\dtos\\appointments\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\templates\\appointmenttemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\appointmenttemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\templates\\passwordresettemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\passwordresettemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\models\\passwordtemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\passwordtemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\templates\\emailtemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\emailtemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\templates\\passwordresettemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\passwordresettemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\models\\emailtemplatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\emailtemplatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\emailtemplatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\services\\user\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\passwordtemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\passwordtemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\templates\\appointmenttemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\appointmenttemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\templates\\emailtemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\emailtemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\appointmenttemplatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\appointmenttemplatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\templates\\appointmenttemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\appointmenttemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\templates\\passwordresettemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\passwordresettemplate.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\templates\\passwordresettemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\templates\\passwordresettemplate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\user\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\user\\emailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\services\\user\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\services\\user\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\models\\appointments\\appointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\controllers\\appointment\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\controllers\\appointment\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\models\\appointments\\appointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\models\\appointments\\appointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\raul may\\source\\repos\\gestionmedicobackend\\gestionmedicobackend\\controllers\\specialty\\specialtycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\dtos\\appointments\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\dtos\\appointments\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|c:\\users\\herna\\downloads\\nueva carpeta\\gestionmedicobackend\\gestionmedicobackend\\controllers\\specialty\\specialtycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1351283E-5C11-4DD2-B072-8F3F0939CAF2}|GestionMedicoBackend\\GestionMedicoBackend.csproj|solutionrelative:gestionmedicobackend\\controllers\\specialty\\specialtycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -70,41 +142,249 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppointmentTemplate.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
-              "RelativeDocumentMoniker": "GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
-              "RelativeToolTip": "GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "DocumentIndex": 5,
+              "Title": "MedicServices.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Medic\\MedicServices.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Medic\\MedicServices.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Medic\\MedicServices.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Services\\Medic\\MedicServices.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBwAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T01:05:41.949Z",
+              "WhenOpened": "2024-07-24T21:39:11.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IRoleService.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Auth\\IRoleService.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Auth\\IRoleService.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Auth\\IRoleService.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Services\\Auth\\IRoleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T21:24:34.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MedicDto.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Medic\\MedicDto.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\DTOs\\Medic\\MedicDto.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Medic\\MedicDto.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\DTOs\\Medic\\MedicDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T20:38:20.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HorarioDto.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Horario\\HorarioDto.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\DTOs\\Horario\\HorarioDto.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Horario\\HorarioDto.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\DTOs\\Horario\\HorarioDto.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAuwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:52:40.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HorarioServices.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Horario\\HorarioServices.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Horario\\HorarioServices.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Horario\\HorarioServices.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Services\\Horario\\HorarioServices.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAgwGAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:51:57.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PatientServices.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Patient\\PatientServices.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Patient\\PatientServices.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Patient\\PatientServices.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Services\\Patient\\PatientServices.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAqwFsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T20:53:22.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HorarioController.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Horario\\HorarioController.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Controllers\\Horario\\HorarioController.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Horario\\HorarioController.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Controllers\\Horario\\HorarioController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:51:30.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AppointmentTemplateModel.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
-              "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
-              "RelativeToolTip": "GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Patient\\PatientController.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Controllers\\Patient\\PatientController.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Patient\\PatientController.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Controllers\\Patient\\PatientController.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAgwGEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T01:05:29.436Z",
+              "WhenOpened": "2024-07-24T21:42:15.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Medic.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Medic\\Medic.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\Medic\\Medic.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Medic\\Medic.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Models\\Medic\\Medic.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAAAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:40:53.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Horario.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Horario\\Horario.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\Horario\\Horario.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Horario\\Horario.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Models\\Horario\\Horario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T20:56:52.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Auth\\Role.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\Auth\\Role.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Auth\\Role.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Models\\Auth\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T21:23:10.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RoleDto.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Role\\RoleDto.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\DTOs\\Role\\RoleDto.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Role\\RoleDto.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\DTOs\\Role\\RoleDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T21:23:57.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RolService.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Auth\\RolService.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Auth\\RolService.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Auth\\RolService.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Services\\Auth\\RolService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T21:24:51.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:40:19.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20240724194930_nuevaTablahorarioconMedico.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Migrations\\20240724194930_nuevaTablahorarioconMedico.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Migrations\\20240724194930_nuevaTablahorarioconMedico.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Migrations\\20240724194930_nuevaTablahorarioconMedico.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Migrations\\20240724194930_nuevaTablahorarioconMedico.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:49:30.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Program.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Program.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:52:02.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Specialty.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Specialty\\Specialty.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\Specialty\\Specialty.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Specialty\\Specialty.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Models\\Specialty\\Specialty.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T19:39:40.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\appsettings.Development.json",
+              "RelativeToolTip": "GestionMedicoBackend\\appsettings.Development.json",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-24T19:33:56.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "EmailTemplateModel.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\EmailTemplateModel.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\EmailTemplateModel.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\EmailTemplateModel.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\EmailTemplateModel.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\EmailTemplateModel.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Models\\EmailTemplateModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -112,11 +392,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 20,
               "Title": "PasswordTemplate.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\PasswordTemplate.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\PasswordTemplate.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\PasswordTemplate.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\PasswordTemplate.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\PasswordTemplate.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Models\\PasswordTemplate.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -124,24 +404,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 21,
               "Title": "AppointmentTemplate.cshtml",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml",
               "RelativeToolTip": "GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml",
               "ViewState": "AQIAACUAAAAAAAAAAAAiwEkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-22T00:35:14.146Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T00:35:14.146Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "EmailTemplate.cshtml",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\EmailTemplate.cshtml",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\EmailTemplate.cshtml",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Templates\\EmailTemplate.cshtml",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\EmailTemplate.cshtml",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\EmailTemplate.cshtml",
               "RelativeToolTip": "GestionMedicoBackend\\Templates\\EmailTemplate.cshtml",
               "ViewState": "AQIAACMAAAAAAAAAAAAkwFkAAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -149,11 +428,48 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
+              "Title": "AppointmentServices.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAowJsAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T23:48:50.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AppointmentTemplateModel.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Models\\AppointmentTemplateModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T01:05:29.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AppointmentTemplate.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
+              "RelativeDocumentMoniker": "GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
+              "RelativeToolTip": "GestionMedicoBackend\\Templates\\AppointmentTemplate.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T01:05:41.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "PasswordResetTemplate.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -161,37 +477,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 26,
               "Title": "PasswordResetTemplate.cshtml",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml",
               "RelativeToolTip": "GestionMedicoBackend\\Templates\\PasswordResetTemplate.cshtml",
               "ViewState": "AQIAADUAAAAAAAAAAAAkwFIAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-22T00:30:00.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T00:30:00.122Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 27,
               "Title": "EmailServices.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\EmailServices.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\EmailServices.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\User\\EmailServices.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\EmailServices.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\EmailServices.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Services\\User\\EmailServices.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAqwEwAAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T00:02:18.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-22T00:02:18.698Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 28,
               "Title": "UserServices.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\UserServices.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\UserServices.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\User\\UserServices.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\UserServices.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\User\\UserServices.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Services\\User\\UserServices.cs",
               "ViewState": "AQIAALcAAAAAAAAAAAAYwOAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -199,37 +513,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 29,
               "Title": "AppointmentController.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Appointment\\AppointmentController.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Appointment\\AppointmentController.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Controllers\\Appointment\\AppointmentController.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Appointment\\AppointmentController.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Appointment\\AppointmentController.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Controllers\\Appointment\\AppointmentController.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAswEQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T23:50:06.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T23:50:06.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppointmentServices.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
-              "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
-              "RelativeToolTip": "GestionMedicoBackend\\Services\\Appointment\\AppointmentServices.cs",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAowNkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T23:48:50.376Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 30,
               "Title": "Appointments.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Appointments\\Appointments.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Appointments\\Appointments.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Models\\Appointments\\Appointments.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Appointments\\Appointments.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Models\\Appointments\\Appointments.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Models\\Appointments\\Appointments.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAxwCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -237,24 +537,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 31,
               "Title": "AppointmentDto.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Appointments\\AppointmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Appointments\\AppointmentDto.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\DTOs\\Appointments\\AppointmentDto.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Appointments\\AppointmentDto.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\DTOs\\Appointments\\AppointmentDto.cs",
               "RelativeToolTip": "GestionMedicoBackend\\DTOs\\Appointments\\AppointmentDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T23:45:47.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-21T23:45:47.601Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 32,
               "Title": "SpecialtyController.cs",
-              "DocumentMoniker": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Specialty\\SpecialtyController.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Specialty\\SpecialtyController.cs",
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Controllers\\Specialty\\SpecialtyController.cs",
-              "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Specialty\\SpecialtyController.cs",
+              "ToolTip": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Specialty\\SpecialtyController.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Controllers\\Specialty\\SpecialtyController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
