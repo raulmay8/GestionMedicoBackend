@@ -444,6 +444,7 @@ C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Deb
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\refs\System.Xml.XPath.dll
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\refs\System.Xml.XPath.XDocument.dll
 C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\refs\WindowsBase.dll
+<<<<<<< Updated upstream
 C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\appsettings.json
 C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\GestionMedicoBackend.exe
@@ -890,3 +891,6 @@ C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend
 C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.pdb
 C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\GestionMedicoBackend.genruntimeconfig.cache
 C:\Users\herna\Downloads\Nueva carpeta\GestionMedicoBackend\GestionMedicoBackend\obj\Debug\net8.0\ref\GestionMedicoBackend.dll
+=======
+C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\bin\Debug\net8.0\Newtonsoft.Json.dll
+>>>>>>> Stashed changes

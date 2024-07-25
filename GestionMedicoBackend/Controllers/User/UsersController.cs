@@ -137,8 +137,8 @@ namespace GestionMedicoBackend.Controllers.User
             }
         }
 
-        [HttpGet("confirm-account")]
-        public async Task<IActionResult> ConfirmAccount([FromQuery] string token)
+        [HttpGet("confirm-account/{token}")]
+        public async Task<IActionResult> ConfirmAccount(string token)
         {
             try
             {
@@ -156,6 +156,8 @@ namespace GestionMedicoBackend.Controllers.User
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+
         [HttpPost("request-password-reset")]
         public async Task<IActionResult> RequestPasswordReset([FromBody] RequestPasswordResetDto requestPasswordResetDto)
         {

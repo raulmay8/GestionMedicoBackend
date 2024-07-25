@@ -99,7 +99,7 @@ public class UserService
         var token = await _tokenServices.GenerateTokenAsync(user);
 
         // Generar el enlace de confirmación
-        var confirmationLink = $"http://localhost/api/users/confirm-account?token={token}";
+        var confirmationLink = $"http://localhost:5173/confirma/{token}";
 
         // Enviar correo de confirmación
         await _emailServices.SendConfirmationEmailAsync(user.Email, user.Username, confirmationLink);
@@ -181,7 +181,7 @@ public class UserService
         if (userToken == null) throw new ApplicationException("Token inválido o expirado");
 
         var user = userToken.User;
-        user.Status = true; 
+        user.Status = true;
         user.ModifiedDate = DateTime.UtcNow;
 
         _context.Users.Update(user);
@@ -189,6 +189,7 @@ public class UserService
         await _context.SaveChangesAsync();
         return true;
     }
+
 
 
     public async Task<bool> ConfirmEmailAsync(int userId)
@@ -219,7 +220,7 @@ public class UserService
         }
 
         var token = await _tokenServices.GenerateTokenAsync(user);
-        var resetLink = $"http://localhost:3000/reset-password?token={token}";
+        var resetLink = $"http://localhost:5173/reset-password?token={token}";
 
         await _emailServices.SendPasswordResetEmailAsync(user.Email, user.Username, resetLink);
     }

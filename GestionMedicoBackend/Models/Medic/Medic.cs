@@ -30,6 +30,8 @@ namespace GestionMedicoBackend.Models
         public int HorarioId { get; set; }
         public Horario Horario { get; set; }
         public ICollection<Appointments> Appointments { get; set; }
+        public int ConsultorioId { get; set; }
+        public Consultorio Consultorio { get; set; }
 
     }
 }

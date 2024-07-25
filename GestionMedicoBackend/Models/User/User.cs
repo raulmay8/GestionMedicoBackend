@@ -32,7 +32,7 @@ namespace GestionMedicoBackend.Models
         public DateTime ModifiedDate { get; set; }
 
         public Token Token { get; set; }
-        public int RoleId { get; set; } 
+        public int? RoleId { get; set; } 
         public Role Role { get; set; }
 
         public ICollection<Patient> Patients { get; set; }

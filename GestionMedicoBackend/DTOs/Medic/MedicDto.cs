@@ -12,8 +12,13 @@ namespace GestionMedicoBackend.DTOs.Medic
         public bool Availability { get; set; }
         public int UserId { get; set; }
         public string UserName { get; set; }
+<<<<<<< Updated upstream
         public int HorarioId { get; set; }
         public string HorarioName { get; set; }
+=======
+        public int ConsultorioId { get; set; }
+        public string ConsultorioName { get; set; }
+>>>>>>> Stashed changes
     }
 
     public class CreateMedicDto
@@ -32,6 +37,8 @@ namespace GestionMedicoBackend.DTOs.Medic
         public int Day { get; set; }
         [Required]
         public int UserId { get; set; }
+        [Required]
+        public int ConsultorioId { get; set; }
     }
 
     public class UpdateMedicDto
@@ -43,5 +50,6 @@ namespace GestionMedicoBackend.DTOs.Medic
         public int Month { get; set; }
         public int Day { get; set; }
         public int UserId { get; set; }
+        public int ConsultorioId { get; set; }
     }
 }

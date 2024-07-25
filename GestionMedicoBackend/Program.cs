@@ -23,7 +23,11 @@ builder.Services.AddScoped<MedicServices>();
 builder.Services.AddScoped<PatientServices>();
 builder.Services.AddScoped<AppointmentServices>();
 builder.Services.AddScoped<SpecialtyServices>();
+<<<<<<< Updated upstream
 builder.Services.AddScoped<HorarioServices>();
+=======
+builder.Services.AddScoped<ConsultorioService>();
+>>>>>>> Stashed changes
 builder.Services.AddScoped<IRoleService, RolService>();
 builder.Services.AddScoped<IPermissionService, PermissionService>();
 builder.Services.AddScoped<IAuthService, AuthService>();

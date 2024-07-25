@@ -17,7 +17,11 @@ namespace GestionMedicoBackend.Data
         public DbSet<Medic> Medics { get; set; }
         public DbSet<Appointments> Appointments { get; set; }
         public DbSet<Specialty> Specialties { get; set; }
+<<<<<<< Updated upstream
         public DbSet<Horario> Horarios { get; set; }
+=======
+        public DbSet<Consultorio> Consultorios { get; set; }
+>>>>>>> Stashed changes
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -102,10 +106,17 @@ namespace GestionMedicoBackend.Data
                       .HasForeignKey(m => m.UserId)
                       .OnDelete(DeleteBehavior.Restrict);
 
+<<<<<<< Updated upstream
                 entity.HasOne(m => m.Horario)
                        .WithMany(h => h.Medics)
                        .HasForeignKey(m => m.HorarioId)
                        .OnDelete(DeleteBehavior.Restrict);
+=======
+                entity.HasOne(m => m.Consultorio)
+                      .WithMany(u => u.Medics)
+                      .HasForeignKey(m => m.ConsultorioId)
+                      .OnDelete(DeleteBehavior.Restrict);
+>>>>>>> Stashed changes
             });
 
             modelBuilder.Entity<Appointments>(entity =>
@@ -143,6 +154,12 @@ namespace GestionMedicoBackend.Data
                 entity.HasKey(s => s.Id);
                 entity.Property(s => s.Nombre).IsRequired().HasMaxLength(100);
                 entity.Property(s => s.Descripcion).IsRequired().HasColumnType("text");
+            });
+
+            modelBuilder.Entity<Consultorio>(entity =>
+            {
+                entity.HasKey(a => a.Id);
+                entity.Property(a => a.Name).HasMaxLength(100);
             });
         }
     }

@@ -1,8 +1,8 @@
-﻿using GestionMedicoBackend.Models.Auth;
-using GestionMedicoBackend.Services;
-using GestionMedicoBackend.Services.Auth;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using GestionMedicoBackend.Services.Auth;
+using GestionMedicoBackend.Models.Auth;
+using System;
 
 namespace GestionMedicoBackend.Controllers.Auth
 {
@@ -23,6 +23,24 @@ namespace GestionMedicoBackend.Controllers.Auth
             try
             {
                 var user = await _authService.Authenticate(model.Email, model.Password);
+
+                return Ok(new
+                {
+                    Token = user.Token.Value
+                });
+            }
+            catch (ApplicationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("facebook")]
+        public async Task<IActionResult> FacebookLogin([FromBody] FacebookLoginRequest model)
+        {
+            try
+            {
+                var user = await _authService.AuthenticateWithFacebook(model.AccessToken);
 
                 return Ok(new
                 {
