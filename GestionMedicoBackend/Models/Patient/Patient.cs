@@ -15,6 +15,11 @@ namespace GestionMedicoBackend.Models
         [Required]
         [MaxLength(50)]
         public string Picture { get; set; }
+        public string Phone {  get; set; }
+        public string BloodGroup { get; set; }
+        public string MaritalStatus { get; set; }
+        public string Address { get; set; }
+        public string Gender { get; set; }
 
         public int UserId { get; set; }
         public User User { get; set; }

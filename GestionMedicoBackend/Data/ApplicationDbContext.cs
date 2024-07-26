@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GestionMedicoBackend.Models;
 using GestionMedicoBackend.Models.Auth;
+using GestionMedicoBackend.Models.Contact;
 
 namespace GestionMedicoBackend.Data
 {
@@ -19,6 +20,8 @@ namespace GestionMedicoBackend.Data
         public DbSet<Specialty> Specialties { get; set; }
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<Consultorio> Consultorios { get; set; }
+        public DbSet<HistorialClinico> HistorialClinicos { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -154,6 +157,20 @@ namespace GestionMedicoBackend.Data
             {
                 entity.HasKey(a => a.Id);
                 entity.Property(a => a.Name).HasMaxLength(100);
+            });
+            modelBuilder.Entity<HistorialClinico>(entity =>
+            {
+                entity.HasKey(a => a.Id);
+                entity.HasOne(a => a.Patient)
+                      .WithOne(u => u.HistorialClinico)
+                      .HasForeignKey<HistorialClinico>(a => a.PatientId);
+            });
+            modelBuilder.Entity<ContactMessage>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Message).IsRequired().HasMaxLength(500);
             });
         }
     }

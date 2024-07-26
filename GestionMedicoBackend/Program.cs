@@ -10,6 +10,9 @@ using GestionMedicoBackend.Services.Patient;
 using GestionMedicoBackend.Services;
 using GestionMedicoBackend.Services.Specialty;
 using GestionMedicoBackend.Services.Horario;
+using GestionMedicoBackend.Models;
+using GestionMedicoBackend.Services.Contacto;
+using GestionMedicoBackend.Services.HistorialClinico;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +28,8 @@ builder.Services.AddScoped<AppointmentServices>();
 builder.Services.AddScoped<SpecialtyServices>();
 builder.Services.AddScoped<HorarioServices>();
 builder.Services.AddScoped<ConsultorioService>();
+builder.Services.AddScoped<HistorialClinicoServices>();
+builder.Services.AddScoped<ContactoService>();
 builder.Services.AddScoped<IRoleService, RolService>();
 builder.Services.AddScoped<IPermissionService, PermissionService>();
 builder.Services.AddScoped<IAuthService, AuthService>();

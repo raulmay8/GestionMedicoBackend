@@ -26,6 +26,11 @@ namespace GestionMedicoBackend.Services.Patient
                     Id = patient.Id,
                     Occupation = patient.Occupation,
                     Picture = patient.Picture,
+                    Phone = patient.Phone,
+                    BloodGroup = patient.BloodGroup,
+                    MaritalStatus = patient.MaritalStatus,
+                    Address = patient.Address,
+                    Gender = patient.Gender,
                     UserId = patient.UserId,
                     UserName = patient.User.Username
                 })
@@ -45,6 +50,11 @@ namespace GestionMedicoBackend.Services.Patient
                 Id = patient.Id,
                 Occupation = patient.Occupation,
                 Picture = patient.Picture,
+                Phone = patient.Phone,
+                BloodGroup = patient.BloodGroup,
+                MaritalStatus = patient.MaritalStatus,
+                Address = patient.Address,
+                Gender = patient.Gender,
                 UserId = patient.UserId,
                 UserName = patient.User.Username
             };
@@ -62,6 +72,11 @@ namespace GestionMedicoBackend.Services.Patient
             {
                 Occupation = createPatientDto.Occupation,
                 Picture = createPatientDto.Picture,
+                Phone = createPatientDto.Phone,
+                BloodGroup = createPatientDto.BloodGroup,
+                MaritalStatus = createPatientDto.MaritalStatus,
+                Address = createPatientDto.Address,
+                Gender = createPatientDto.Gender,
                 UserId = createPatientDto.UserId
             };
 
@@ -85,6 +100,11 @@ namespace GestionMedicoBackend.Services.Patient
 
             patient.Occupation = updatePatientDto.Occupation ?? patient.Occupation;
             patient.Picture = updatePatientDto.Picture ?? patient.Picture;
+            patient.Phone = updatePatientDto.Phone ?? patient.Phone;
+            patient.BloodGroup = updatePatientDto.BloodGroup ?? patient.BloodGroup;
+            patient.MaritalStatus = updatePatientDto.MaritalStatus ?? patient.MaritalStatus;
+            patient.Address = updatePatientDto.Address ?? patient.Address;
+            patient.Gender = updatePatientDto.Gender ?? patient.Gender;
 
             _context.Patients.Update(patient);
             await _context.SaveChangesAsync();

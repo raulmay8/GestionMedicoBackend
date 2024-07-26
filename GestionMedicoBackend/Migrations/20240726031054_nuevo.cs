@@ -6,11 +6,43 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GestionMedicoBackend.Migrations
 {
     /// <inheritdoc />
-    public partial class inicio : Migration
+    public partial class nuevo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Consultorios",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Availability = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Consultorios", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Horarios",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Turno = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Entrada = table.Column<TimeOnly>(type: "time", nullable: false),
+                    Salida = table.Column<TimeOnly>(type: "time", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Horarios", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Permissions",
                 columns: table => new
@@ -35,6 +67,20 @@ namespace GestionMedicoBackend.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Specialties",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Descripcion = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Specialties", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,7 +121,7 @@ namespace GestionMedicoBackend.Migrations
                     Status = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RoleId = table.Column<int>(type: "int", nullable: false)
+                    RoleId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,8 +130,7 @@ namespace GestionMedicoBackend.Migrations
                         name: "FK_Users_Roles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "Roles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -99,11 +144,25 @@ namespace GestionMedicoBackend.Migrations
                     YearExperience = table.Column<int>(type: "int", nullable: false),
                     DateGraduate = table.Column<DateOnly>(type: "date", nullable: false),
                     Availability = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    HorarioId = table.Column<int>(type: "int", nullable: false),
+                    ConsultorioId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Medics", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Medics_Consultorios_ConsultorioId",
+                        column: x => x.ConsultorioId,
+                        principalTable: "Consultorios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Medics_Horarios_HorarioId",
+                        column: x => x.HorarioId,
+                        principalTable: "Horarios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Medics_Users_UserId",
                         column: x => x.UserId,
@@ -162,7 +221,16 @@ namespace GestionMedicoBackend.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Reason = table.Column<string>(type: "text", nullable: false),
                     PatientId = table.Column<int>(type: "int", nullable: false),
-                    MedicId = table.Column<int>(type: "int", nullable: false)
+                    MedicId = table.Column<int>(type: "int", nullable: false),
+                    Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Apellido = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Genero = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Correo = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    NumeroTelefono = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    Estado = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    CodigoPostal = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    SpecialtyId = table.Column<int>(type: "int", nullable: false),
+                    FechaCita = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -179,6 +247,47 @@ namespace GestionMedicoBackend.Migrations
                         principalTable: "Patients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Appointments_Specialties_SpecialtyId",
+                        column: x => x.SpecialtyId,
+                        principalTable: "Specialties",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HistorialClinico",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Smoke = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Alcohol = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Coffee = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Allergic = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Allergies = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TakesMedication = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Medication = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MedicalHistory = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PatientId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HistorialClinico", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_HistorialClinico_Patients_PatientId",
+                        column: x => x.PatientId,
+                        principalTable: "Patients",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -190,6 +299,27 @@ namespace GestionMedicoBackend.Migrations
                 name: "IX_Appointments_PatientId",
                 table: "Appointments",
                 column: "PatientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Appointments_SpecialtyId",
+                table: "Appointments",
+                column: "SpecialtyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HistorialClinico_PatientId",
+                table: "HistorialClinico",
+                column: "PatientId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medics_ConsultorioId",
+                table: "Medics",
+                column: "ConsultorioId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medics_HorarioId",
+                table: "Medics",
+                column: "HorarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Medics_UserId",
@@ -242,6 +372,9 @@ namespace GestionMedicoBackend.Migrations
                 name: "Appointments");
 
             migrationBuilder.DropTable(
+                name: "HistorialClinico");
+
+            migrationBuilder.DropTable(
                 name: "RolePermissions");
 
             migrationBuilder.DropTable(
@@ -251,10 +384,19 @@ namespace GestionMedicoBackend.Migrations
                 name: "Medics");
 
             migrationBuilder.DropTable(
+                name: "Specialties");
+
+            migrationBuilder.DropTable(
                 name: "Patients");
 
             migrationBuilder.DropTable(
                 name: "Permissions");
+
+            migrationBuilder.DropTable(
+                name: "Consultorios");
+
+            migrationBuilder.DropTable(
+                name: "Horarios");
 
             migrationBuilder.DropTable(
                 name: "Users");

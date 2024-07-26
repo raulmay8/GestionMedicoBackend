@@ -152,6 +152,136 @@ namespace GestionMedicoBackend.Migrations
                     b.ToTable("RolePermissions");
                 });
 
+            modelBuilder.Entity("GestionMedicoBackend.Models.Consultorio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Availability")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Consultorios");
+                });
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.Contact.ContactMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactMessages");
+                });
+
+            modelBuilder.Entity("GestionMedicoBackend.Models.HistorialClinico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Alcohol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Allergic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Allergies")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Coffee")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MedicalHistory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Medication")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Smoke")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TakesMedication")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatientId")
+                        .IsUnique();
+
+                    b.ToTable("HistorialClinicos");
+                });
+
             modelBuilder.Entity("GestionMedicoBackend.Models.Horario", b =>
                 {
                     b.Property<int>("Id")
@@ -159,6 +289,7 @@ namespace GestionMedicoBackend.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<TimeOnly>("Entrada")
                         .HasColumnType("time");
 
@@ -179,20 +310,6 @@ namespace GestionMedicoBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Horarios");
-                    b.Property<bool>("Availability")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Consultorios");
                 });
 
             modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
@@ -233,8 +350,9 @@ namespace GestionMedicoBackend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HorarioId");
                     b.HasIndex("ConsultorioId");
+
+                    b.HasIndex("HorarioId");
 
                     b.HasIndex("UserId");
 
@@ -249,10 +367,30 @@ namespace GestionMedicoBackend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BloodGroup")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaritalStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Occupation")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Picture")
                         .IsRequired()
@@ -411,14 +549,28 @@ namespace GestionMedicoBackend.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("GestionMedicoBackend.Models.HistorialClinico", b =>
+                {
+                    b.HasOne("GestionMedicoBackend.Models.Patient", "Patient")
+                        .WithOne("HistorialClinico")
+                        .HasForeignKey("GestionMedicoBackend.Models.HistorialClinico", "PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Patient");
+                });
+
             modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
                 {
-                    b.HasOne("GestionMedicoBackend.Models.Horario", "Horario")
-                        .WithMany("Medics")
-                        .HasForeignKey("HorarioId");
                     b.HasOne("GestionMedicoBackend.Models.Consultorio", "Consultorio")
                         .WithMany("Medics")
                         .HasForeignKey("ConsultorioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("GestionMedicoBackend.Models.Horario", "Horario")
+                        .WithMany("Medics")
+                        .HasForeignKey("HorarioId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -428,8 +580,9 @@ namespace GestionMedicoBackend.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Horario");
                     b.Navigation("Consultorio");
+
+                    b.Navigation("Horario");
 
                     b.Navigation("User");
                 });
@@ -482,6 +635,11 @@ namespace GestionMedicoBackend.Migrations
                     b.Navigation("Medics");
                 });
 
+            modelBuilder.Entity("GestionMedicoBackend.Models.Horario", b =>
+                {
+                    b.Navigation("Medics");
+                });
+
             modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
                 {
                     b.Navigation("Appointments");
@@ -490,6 +648,9 @@ namespace GestionMedicoBackend.Migrations
             modelBuilder.Entity("GestionMedicoBackend.Models.Patient", b =>
                 {
                     b.Navigation("Appointments");
+
+                    b.Navigation("HistorialClinico")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GestionMedicoBackend.Models.Specialty", b =>
