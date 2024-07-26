@@ -1,6 +1,7 @@
 ﻿using GestionMedicoBackend.Data;
 using GestionMedicoBackend.DTOs.Contacto;
 using GestionMedicoBackend.Models.Contact;
+using GestionMedicoBackend.Services.User;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,10 +11,12 @@ namespace GestionMedicoBackend.Services.Contacto
     public class ContactoService
     {
         private readonly ApplicationDbContext _context;
+        private readonly EmailServices _emailServices;
 
-        public ContactoService(ApplicationDbContext context)
+        public ContactoService(ApplicationDbContext context, EmailServices emailServices)
         {
             _context = context;
+            _emailServices = emailServices;
         }
 
         public async Task<IEnumerable<ContactoDto>> GetAllContactsAsync()
@@ -59,6 +62,9 @@ namespace GestionMedicoBackend.Services.Contacto
 
             _context.ContactMessages.Add(contact);
             await _context.SaveChangesAsync();
+
+            // Enviar correo de confirmación
+            await _emailServices.SendContactConfirmationEmailAsync(createContactoDto.Email, contact);
 
             return "Mensaje de contacto creado exitosamente";
         }

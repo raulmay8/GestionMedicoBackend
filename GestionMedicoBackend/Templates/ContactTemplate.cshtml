@@ -1,0 +1,105 @@
+﻿@model GestionMedicoBackend.Models.ContactTemplateModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Confirmación de Contacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f7;
+            color: #51545e;
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: none;
+        }
+
+        .email-wrapper {
+            width: 100%;
+            background-color: #f4f4f7;
+            padding: 20px;
+        }
+
+        .email-content {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .email-header {
+            background-color: #408D86;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .email-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .email-footer {
+            text-align: center;
+            padding: 20px;
+            color: #a8aaaf;
+            font-size: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px auto;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #408D86;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .content-cell {
+            padding: 35px;
+        }
+
+        .sub {
+            color: #6b6e76;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #a8aaaf;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-content">
+            <div class="email-header">
+                <h1>Confirmación de Contacto</h1>
+            </div>
+            <div class="email-body">
+                <p>Hola @Model.Name,</p>
+                <p>Hemos recibido tu mensaje de contacto. Aquí están los detalles de tu mensaje:</p>
+                <p><strong>Nombre:</strong> @Model.Name</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>Mensaje:</strong> @Model.Message</p>
+                <p>Fecha y hora de envío: @Model.CreatedAt.ToString("f")</p>
+                <p>Nos pondremos en contacto contigo a la brevedad posible.</p>
+                <p>El equipo de Gestión Médico</p>
+            </div>
+            <div class="email-footer">
+                <p class="sub">&copy; 2024 Gestión médico. Todos los derechos reservados.</p>
+                <p class="sub">México - 1234 Avenida Cancun - Cancun, QRoo - 77500</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

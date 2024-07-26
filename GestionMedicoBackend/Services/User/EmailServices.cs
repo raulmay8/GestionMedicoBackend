@@ -3,6 +3,7 @@ using System.Net.Mail;
 using GestionMedicoBackend.Models;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
+using GestionMedicoBackend.Models.Contact;
 
 namespace GestionMedicoBackend.Services.User
 {
@@ -12,6 +13,7 @@ namespace GestionMedicoBackend.Services.User
         Task SendConfirmationEmailAsync(string toEmail, string username, string confirmationLink);
         Task SendPasswordResetEmailAsync(string toEmail, string username, string resetLink);
         Task SendAppointmentConfirmationEmailAsync(string toEmail, Appointments appointment);
+        Task SendContactConfirmationEmailAsync(string toEmail, ContactMessage contact);
     }
 
     public class EmailServices : IEmailService
@@ -86,6 +88,20 @@ namespace GestionMedicoBackend.Services.User
 
             string message = await _emailTemplateService.RenderTemplateAsync("AppointmentTemplate", templateModel);
             await SendEmailAsync(toEmail, "Confirmación de Cita", message);
+        }
+
+        public async Task SendContactConfirmationEmailAsync(string toEmail, ContactMessage contact)
+        {
+            var templateModel = new ContactTemplateModel
+            {
+                Name = contact.Name,
+                Email = contact.Email,
+                Message = contact.Message,
+                CreatedAt = contact.CreatedAt
+            };
+
+            string message = await _emailTemplateService.RenderTemplateAsync("ContactTemplate", templateModel);
+            await SendEmailAsync(toEmail, "Confirmación de Contacto", message);
         }
     }
 }
