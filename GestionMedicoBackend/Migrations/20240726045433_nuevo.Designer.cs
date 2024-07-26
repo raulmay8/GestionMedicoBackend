@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionMedicoBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240726035617_dos")]
-    partial class dos
+    [Migration("20240726045433_nuevo")]
+    partial class nuevo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

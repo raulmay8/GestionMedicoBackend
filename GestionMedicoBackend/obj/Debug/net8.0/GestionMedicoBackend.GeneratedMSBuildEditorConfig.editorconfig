@@ -9,23 +9,23 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestionMedicoBackend
 build_property.RootNamespace = GestionMedicoBackend
-build_property.ProjectDir = C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend\
+build_property.ProjectDir = C:\Users\angel\Videos\backend\GestionMedicoBackend\GestionMedicoBackend\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Raul May\source\repos\GestionMedicoBackend\GestionMedicoBackend
+build_property.MSBuildProjectDirectory = C:\Users\angel\Videos\backend\GestionMedicoBackend\GestionMedicoBackend
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Raul May/source/repos/GestionMedicoBackend/GestionMedicoBackend/Templates/AppointmentTemplate.cshtml]
+[C:/Users/angel/Videos/backend/GestionMedicoBackend/GestionMedicoBackend/Templates/AppointmentTemplate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = VGVtcGxhdGVzXEFwcG9pbnRtZW50VGVtcGxhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Raul May/source/repos/GestionMedicoBackend/GestionMedicoBackend/Templates/EmailTemplate.cshtml]
+[C:/Users/angel/Videos/backend/GestionMedicoBackend/GestionMedicoBackend/Templates/EmailTemplate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = VGVtcGxhdGVzXEVtYWlsVGVtcGxhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Raul May/source/repos/GestionMedicoBackend/GestionMedicoBackend/Templates/PasswordResetTemplate.cshtml]
+[C:/Users/angel/Videos/backend/GestionMedicoBackend/GestionMedicoBackend/Templates/PasswordResetTemplate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = VGVtcGxhdGVzXFBhc3N3b3JkUmVzZXRUZW1wbGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

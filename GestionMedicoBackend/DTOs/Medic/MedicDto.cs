@@ -33,6 +33,8 @@ namespace GestionMedicoBackend.DTOs.Medic
         [Required]
         public int Day { get; set; }
         [Required]
+        public int HorarioId { get; set; }
+        [Required]
         public int UserId { get; set; }
         [Required]
         public int ConsultorioId { get; set; }
@@ -46,6 +48,7 @@ namespace GestionMedicoBackend.DTOs.Medic
         public int Year { get; set; }
         public int Month { get; set; }
         public int Day { get; set; }
+        public int HorarioId { get; set; }
         public int UserId { get; set; }
         public int ConsultorioId { get; set; }
     }

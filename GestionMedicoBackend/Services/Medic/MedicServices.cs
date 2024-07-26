@@ -22,6 +22,7 @@ namespace GestionMedicoBackend.Services.Medic
             return await _context.Medics
                 .Include(m => m.User)
                 .Include(m => m.Consultorio)
+                .Include(m => m.Horario) // Incluir Horario
                 .Select(medic => new MedicDto
                 {
                     Id = medic.Id,
@@ -33,7 +34,9 @@ namespace GestionMedicoBackend.Services.Medic
                     UserId = medic.UserId,
                     UserName = medic.User.Username,
                     ConsultorioId = medic.Consultorio.Id,
-                    ConsultorioName = medic.Consultorio.Name
+                    ConsultorioName = medic.Consultorio.Name,
+                    HorarioId = medic.Horario.Id,
+                    HorarioName = medic.Horario.Name // Mapear Horario
                 })
                 .ToListAsync();
         }
@@ -43,6 +46,7 @@ namespace GestionMedicoBackend.Services.Medic
             var medic = await _context.Medics
                 .Include(m => m.User)
                 .Include(m => m.Consultorio)
+                .Include(m => m.Horario) // Incluir Horario
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (medic == null) throw new KeyNotFoundException("Médico no encontrado");
@@ -58,7 +62,9 @@ namespace GestionMedicoBackend.Services.Medic
                 UserId = medic.UserId,
                 UserName = medic.User.Username,
                 ConsultorioId = medic.Consultorio.Id,
-                ConsultorioName = medic.Consultorio.Name
+                ConsultorioName = medic.Consultorio.Name,
+                HorarioId = medic.Horario.Id,
+                HorarioName = medic.Horario.Name // Mapear Horario
             };
         }
 
@@ -69,6 +75,9 @@ namespace GestionMedicoBackend.Services.Medic
 
             var consultorio = await _context.Consultorios.FindAsync(createMedicDto.ConsultorioId);
             if (consultorio == null) throw new KeyNotFoundException("Consultorio no encontrado");
+
+            var horario = await _context.Horarios.FindAsync(createMedicDto.HorarioId);
+            if (horario == null) throw new KeyNotFoundException("Horario no encontrado");
 
             var existingMedic = await _context.Medics.FirstOrDefaultAsync(m => m.UserId == createMedicDto.UserId);
             if (existingMedic != null) throw new InvalidOperationException("El usuario ya está registrado como médico.");
@@ -85,7 +94,8 @@ namespace GestionMedicoBackend.Services.Medic
                     DateGraduate = dateGraduate,
                     Availability = true,
                     UserId = createMedicDto.UserId,
-                    ConsultorioId = createMedicDto.ConsultorioId
+                    ConsultorioId = createMedicDto.ConsultorioId,
+                    HorarioId = createMedicDto.HorarioId // Asignar HorarioId
                 };
 
                 _context.Medics.Add(medic);
@@ -102,12 +112,22 @@ namespace GestionMedicoBackend.Services.Medic
                     UserId = medic.UserId,
                     UserName = user.Username,
                     ConsultorioId = consultorio.Id,
-                    ConsultorioName = consultorio.Name
+                    ConsultorioName = consultorio.Name,
+                    HorarioId = horario.Id,
+                    HorarioName = horario.Name // Mapear Horario
                 };
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException ex)
             {
-                throw new ArgumentException("Fecha de graduación inválida");
+                throw new ArgumentException("Fecha de graduación inválida: " + ex.Message);
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new Exception("Ocurrió un error al guardar los cambios en la base de datos: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
             }
         }
 
@@ -128,6 +148,13 @@ namespace GestionMedicoBackend.Services.Medic
                 var consultorio = await _context.Consultorios.FindAsync(updateMedicDto.ConsultorioId);
                 if (consultorio == null) throw new KeyNotFoundException("Consultorio no encontrado");
                 medic.ConsultorioId = updateMedicDto.ConsultorioId;
+            }
+
+            if (updateMedicDto.HorarioId != 0 && updateMedicDto.HorarioId != medic.HorarioId)
+            {
+                var horario = await _context.Horarios.FindAsync(updateMedicDto.HorarioId);
+                if (horario == null) throw new KeyNotFoundException("Horario no encontrado");
+                medic.HorarioId = updateMedicDto.HorarioId;
             }
 
             medic.ProfessionalId = updateMedicDto.ProfessionalId ?? medic.ProfessionalId;
