@@ -17,11 +17,8 @@ namespace GestionMedicoBackend.Data
         public DbSet<Medic> Medics { get; set; }
         public DbSet<Appointments> Appointments { get; set; }
         public DbSet<Specialty> Specialties { get; set; }
-<<<<<<< Updated upstream
         public DbSet<Horario> Horarios { get; set; }
-=======
         public DbSet<Consultorio> Consultorios { get; set; }
->>>>>>> Stashed changes
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -106,17 +103,15 @@ namespace GestionMedicoBackend.Data
                       .HasForeignKey(m => m.UserId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-<<<<<<< Updated upstream
                 entity.HasOne(m => m.Horario)
                        .WithMany(h => h.Medics)
                        .HasForeignKey(m => m.HorarioId)
                        .OnDelete(DeleteBehavior.Restrict);
-=======
+
                 entity.HasOne(m => m.Consultorio)
                       .WithMany(u => u.Medics)
                       .HasForeignKey(m => m.ConsultorioId)
                       .OnDelete(DeleteBehavior.Restrict);
->>>>>>> Stashed changes
             });
 
             modelBuilder.Entity<Appointments>(entity =>
@@ -142,7 +137,6 @@ namespace GestionMedicoBackend.Data
                       .HasForeignKey(a => a.MedicId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // Relación con Specialty
                 entity.HasOne(a => a.Specialty)
                       .WithMany(s => s.Appointments)
                       .HasForeignKey(a => a.SpecialtyId)

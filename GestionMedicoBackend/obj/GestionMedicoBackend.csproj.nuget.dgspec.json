@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj": {}
+    "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj": {
+    "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj",
+        "projectUniqueName": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj",
         "projectName": "GestionMedicoBackend",
-        "projectPath": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj",
-        "packagesPath": "C:\\Users\\herna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\herna\\Downloads\\Nueva carpeta\\GestionMedicoBackend\\GestionMedicoBackend\\obj\\",
+        "projectPath": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\GestionMedicoBackend.csproj",
+        "packagesPath": "C:\\Users\\Raul May\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\herna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Raul May\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -20,5 +20,6 @@ namespace GestionMedicoBackend.Models
         public User User { get; set; }
 
         public ICollection<Appointments> Appointments { get; set; }
+        public HistorialClinico HistorialClinico { get; set; }
     }
 }

@@ -152,19 +152,13 @@ namespace GestionMedicoBackend.Migrations
                     b.ToTable("RolePermissions");
                 });
 
-<<<<<<< Updated upstream
             modelBuilder.Entity("GestionMedicoBackend.Models.Horario", b =>
-=======
-            modelBuilder.Entity("GestionMedicoBackend.Models.Consultorio", b =>
->>>>>>> Stashed changes
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-<<<<<<< Updated upstream
                     b.Property<TimeOnly>("Entrada")
                         .HasColumnType("time");
 
@@ -185,7 +179,6 @@ namespace GestionMedicoBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Horarios");
-=======
                     b.Property<bool>("Availability")
                         .HasColumnType("bit");
 
@@ -200,7 +193,6 @@ namespace GestionMedicoBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Consultorios");
->>>>>>> Stashed changes
                 });
 
             modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
@@ -241,11 +233,8 @@ namespace GestionMedicoBackend.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< Updated upstream
                     b.HasIndex("HorarioId");
-=======
                     b.HasIndex("ConsultorioId");
->>>>>>> Stashed changes
 
                     b.HasIndex("UserId");
 
@@ -424,15 +413,12 @@ namespace GestionMedicoBackend.Migrations
 
             modelBuilder.Entity("GestionMedicoBackend.Models.Medic", b =>
                 {
-<<<<<<< Updated upstream
                     b.HasOne("GestionMedicoBackend.Models.Horario", "Horario")
                         .WithMany("Medics")
-                        .HasForeignKey("HorarioId")
-=======
+                        .HasForeignKey("HorarioId");
                     b.HasOne("GestionMedicoBackend.Models.Consultorio", "Consultorio")
                         .WithMany("Medics")
                         .HasForeignKey("ConsultorioId")
->>>>>>> Stashed changes
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -442,11 +428,8 @@ namespace GestionMedicoBackend.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-<<<<<<< Updated upstream
                     b.Navigation("Horario");
-=======
                     b.Navigation("Consultorio");
->>>>>>> Stashed changes
 
                     b.Navigation("User");
                 });
@@ -494,11 +477,7 @@ namespace GestionMedicoBackend.Migrations
                     b.Navigation("Users");
                 });
 
-<<<<<<< Updated upstream
-            modelBuilder.Entity("GestionMedicoBackend.Models.Horario", b =>
-=======
             modelBuilder.Entity("GestionMedicoBackend.Models.Consultorio", b =>
->>>>>>> Stashed changes
                 {
                     b.Navigation("Medics");
                 });
