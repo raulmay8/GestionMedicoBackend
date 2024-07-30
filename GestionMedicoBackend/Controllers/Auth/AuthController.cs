@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using GestionMedicoBackend.Services.Auth;
 using GestionMedicoBackend.Models.Auth;
 using System;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace GestionMedicoBackend.Controllers.Auth
 {
@@ -24,9 +25,15 @@ namespace GestionMedicoBackend.Controllers.Auth
             {
                 var user = await _authService.Authenticate(model.Email, model.Password);
 
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var jwtToken = tokenHandler.ReadJwtToken(user.Token.Value);
+                var permissionsClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == "permissions")?.Value;
+                var permissions = permissionsClaim?.Split(',');
+
                 return Ok(new
                 {
-                    Token = user.Token.Value
+                    Token = user.Token.Value,
+                    Permissions = permissions
                 });
             }
             catch (ApplicationException ex)

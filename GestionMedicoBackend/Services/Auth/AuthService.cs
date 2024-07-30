@@ -28,7 +28,11 @@ namespace GestionMedicoBackend.Services.Auth
 
         public async Task<UserModel> Authenticate(string email, string password)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == email);
+            var user = await _context.Users
+                .Include(u => u.Role)
+                .ThenInclude(r => r.RolePermissions)
+                .ThenInclude(rp => rp.Permission)
+                .SingleOrDefaultAsync(u => u.Email == email);
 
             if (user == null)
                 throw new ApplicationException("Email o contraseña incorrecta");
@@ -39,25 +43,34 @@ namespace GestionMedicoBackend.Services.Auth
             if (!user.Status)
                 throw new ApplicationException("Cuenta no confirmada");
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["JwtSettings:Key"]);
+            var userPermissions = user.Role.RolePermissions.Select(rp => rp.Permission.Name).ToList();
+
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim("permissions", string.Join(",", userPermissions))
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JwtSettings:Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.Name, user.Username),
-                    new Claim(ClaimTypes.Email, user.Email),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
-                }),
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = creds
             };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenValue = tokenHandler.WriteToken(token);
 
             user.Token = new Token { Value = tokenValue };
             return user;
         }
+
 
         public async Task<UserModel> AuthenticateWithFacebook(string accessToken)
         {
