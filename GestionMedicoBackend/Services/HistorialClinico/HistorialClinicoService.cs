@@ -21,6 +21,7 @@ namespace GestionMedicoBackend.Services.HistorialClinico
         {
             return await _context.HistorialClinicos
                 .Include(h => h.Patient)
+                .ThenInclude(p => p.User)
                 .Select(historial => new HistorialClinicoDto
                 {
                     Id = historial.Id,
@@ -50,6 +51,7 @@ namespace GestionMedicoBackend.Services.HistorialClinico
         {
             var historial = await _context.HistorialClinicos
                 .Include(h => h.Patient)
+                .ThenInclude(p => p.User)
                 .FirstOrDefaultAsync(h => h.Id == id);
 
             if (historial == null) throw new KeyNotFoundException("Historial clínico no encontrado");
