@@ -50,7 +50,8 @@ namespace GestionMedicoBackend.Services.Auth
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim("permissions", string.Join(",", userPermissions))
+                new Claim("permissions", string.Join(",", userPermissions)),
+                new Claim(ClaimTypes.Role, user.Role.Name)
             };
 
             var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JwtSettings:Key"]));
