@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Controllers\\Auth\\AuthController.cs",
               "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Controllers\\Auth\\AuthController.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Controllers\\Auth\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAJAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAUwB4AAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-30T11:56:16.75Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "GestionMedicoBackend\\Services\\Auth\\PermissionService.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T11:53:11.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T11:53:11.855Z"
             },
             {
               "$type": "Document",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "GestionMedicoBackend\\Services\\Auth\\AuthService.cs",
               "ToolTip": "C:\\Users\\Raul May\\source\\repos\\GestionMedicoBackend\\GestionMedicoBackend\\Services\\Auth\\AuthService.cs",
               "RelativeToolTip": "GestionMedicoBackend\\Services\\Auth\\AuthService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAmwEgAAAAAAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAlwDQAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-30T11:52:49.503Z",
               "EditorCaption": ""
