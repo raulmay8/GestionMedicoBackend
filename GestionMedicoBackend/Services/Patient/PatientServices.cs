@@ -30,6 +30,7 @@ namespace GestionMedicoBackend.Services.Patient
                     BloodGroup = patient.BloodGroup,
                     MaritalStatus = patient.MaritalStatus,
                     Address = patient.Address,
+                    Gender = patient.Gender,
                     UserId = patient.UserId,
                     UserName = patient.User.Username,
                     Email = patient.User.Email
@@ -54,6 +55,7 @@ namespace GestionMedicoBackend.Services.Patient
                 BloodGroup = patient.BloodGroup,
                 MaritalStatus = patient.MaritalStatus,
                 Address = patient.Address,
+                Gender = patient.Gender,
                 UserId = patient.UserId,
                 UserName = patient.User.Username
             };
