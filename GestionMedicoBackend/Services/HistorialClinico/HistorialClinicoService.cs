@@ -51,33 +51,33 @@ namespace GestionMedicoBackend.Services.HistorialClinico
         {
             var historial = await _context.HistorialClinicos
                 .Include(h => h.Patient)
-                .ThenInclude(p => p.User)
-                .FirstOrDefaultAsync(h => h.Id == id);
+                .FirstOrDefaultAsync(h => h.PatientId == id);
+
 
             if (historial == null) throw new KeyNotFoundException("Historial clínico no encontrado");
-
-            return new HistorialClinicoDto
-            {
-                Id = historial.Id,
-                Name = historial.Name,
-                Surname = historial.Surname,
-                Address = historial.Address,
-                Gender = historial.Gender,
-                Email = historial.Email,
-                Phone = historial.Phone,
-                State = historial.State,
-                PostalCode = historial.PostalCode,
-                Smoke = historial.Smoke,
-                Alcohol = historial.Alcohol,
-                Coffee = historial.Coffee,
-                Allergic = historial.Allergic,
-                Allergies = historial.Allergies,
-                TakesMedication = historial.TakesMedication,
-                Medication = historial.Medication,
-                MedicalHistory = historial.MedicalHistory,
-                PatientId = historial.PatientId,
-                PatientName = historial.Patient.User.Username
-            };
+             HistorialClinicoDto hist = new HistorialClinicoDto();
+            hist.Id = id;
+            hist.Name = historial.Name;
+            hist.Phone = historial.Phone;
+            hist.Email = historial.Email; 
+            hist.Address = historial.Address;  
+            hist.Coffee = historial.Coffee;
+            hist.Allergic = historial.Allergic;
+            hist.Smoke = historial.Smoke;
+            hist.Surname = historial.Surname;
+            hist.Name = historial.Name;
+            hist.Gender = historial.Gender;
+            hist.PostalCode = historial.PostalCode; 
+            hist.State = historial.State;
+            hist.Smoke = historial.Smoke;
+            hist.Allergies = historial.Allergies;
+            hist.TakesMedication = historial.TakesMedication;
+            hist.Medication = historial.Medication;
+            hist.MedicalHistory = historial.MedicalHistory;
+            hist.PatientId = historial.PatientId;
+            
+            return hist;
+    
         }
 
         public async Task<string> CreateHistorialClinicoAsync(CreateHistorialClinicoDto createHistorialClinicoDto)
@@ -114,7 +114,7 @@ namespace GestionMedicoBackend.Services.HistorialClinico
 
         public async Task<bool> UpdateHistorialClinicoAsync(int id, UpdateHistorialClinicoDto updateHistorialClinicoDto)
         {
-            var historial = await _context.HistorialClinicos.FindAsync(id);
+            var historial = await _context.HistorialClinicos.FirstOrDefaultAsync(h => h.PatientId == id);
             if (historial == null) throw new KeyNotFoundException("Historial clínico no encontrado");
 
             historial.Name = updateHistorialClinicoDto.Name ?? historial.Name;
