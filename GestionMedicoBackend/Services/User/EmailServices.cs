@@ -52,17 +52,18 @@ namespace GestionMedicoBackend.Services.User
             await _smtpClient.SendMailAsync(mailMessage);
         }
 
-        public async Task SendConfirmationEmailAsync(string toEmail, string username, string confirmationLink)
+        public async Task SendConfirmationEmailAsync(string toEmail, string username, string confirmationCode)
         {
             var templateModel = new EmailTemplateModel
             {
                 Username = username,
-                ConfirmationLink = confirmationLink
+                ConfirmationCode = confirmationCode
             };
 
             string message = await _emailTemplateService.RenderTemplateAsync("EmailTemplate", templateModel);
             await SendEmailAsync(toEmail, "Confirma tu cuenta", message);
         }
+
 
         public async Task SendPasswordResetEmailAsync(string toEmail, string username, string resetLink)
         {

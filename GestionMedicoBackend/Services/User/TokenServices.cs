@@ -55,6 +55,22 @@ namespace GestionMedicoBackend.Services.User
 
             return tokenValue;
         }
+        public async Task<string> GenerateRandomCodeAsync(Models.User user)
+        {
+            var random = new Random();
+            var randomCode = random.Next(10000, 100000).ToString();
 
+            var codeToken = new Token
+            {
+                Value = randomCode,
+                CreatedAt = DateTime.UtcNow,
+                UserId = user.Id
+            };
+
+            _context.Tokens.Add(codeToken);
+            await _context.SaveChangesAsync();
+
+            return randomCode;
+        }
     }
 }

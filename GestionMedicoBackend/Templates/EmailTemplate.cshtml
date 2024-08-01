@@ -87,8 +87,14 @@
             </div>
             <div class="email-body">
                 <p>Hola @Model.Username,</p>
-                <p>Por favor confirma tu cuenta haciendo clic en el siguiente botón:</p>
-                <p><a href="@Model.ConfirmationLink" class="button">Confirmar cuenta</a></p>
+                <p>Por favor usa el siguiente código para confirmar tu cuenta:</p>
+                <p style="font-size: 24px; font-weight: bold; color: #408D86;">@Model.ConfirmationCode</p>
+                <p>Puedes confirmar tu cuenta visitando el siguiente enlace:</p>
+                <p>
+                    <a href="http://localhost:5173/confirma?code=@Model.ConfirmationCode" class="button">
+                        Confirmar Cuenta
+                    </a>
+                </p>
                 <p>Si tienes alguna pregunta, puedes comunicarte con nosotros a través de nuestro formulario de contacto</p>
                 <p>El equipo de Gestión Médico</p>
             </div>

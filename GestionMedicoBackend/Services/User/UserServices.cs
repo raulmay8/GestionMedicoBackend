@@ -96,13 +96,9 @@ public class UserService
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
 
-        var token = await _tokenServices.GenerateTokenAsync(user);
+        var code = await _tokenServices.GenerateRandomCodeAsync(user);
 
-        // Generar el enlace de confirmación
-        var confirmationLink = $"http://localhost:5173/confirma/{token}";
-
-        // Enviar correo de confirmación
-        await _emailServices.SendConfirmationEmailAsync(user.Email, user.Username, confirmationLink);
+        await _emailServices.SendConfirmationEmailAsync(user.Email, user.Username, code);
 
         return new UserDto
         {
@@ -172,13 +168,13 @@ public class UserService
         return true;
     }
 
-    public async Task<bool> ConfirmAccountAsync(string token)
+    public async Task<bool> ConfirmAccountAsync(string code)
     {
         var userToken = await _context.Tokens
             .Include(t => t.User)
-            .FirstOrDefaultAsync(t => t.Value == token);
+            .FirstOrDefaultAsync(t => t.Value == code);
 
-        if (userToken == null) throw new ApplicationException("Token inválido o expirado");
+        if (userToken == null) throw new ApplicationException("Código inválido o expirado");
 
         var user = userToken.User;
         user.Status = true;
@@ -189,6 +185,7 @@ public class UserService
         await _context.SaveChangesAsync();
         return true;
     }
+
 
 
 
@@ -219,11 +216,12 @@ public class UserService
             await _context.SaveChangesAsync();
         }
 
-        var token = await _tokenServices.GenerateTokenAsync(user);
-        var resetLink = $"http://localhost:5173/reset-password?token={token}";
+        var code = await _tokenServices.GenerateRandomCodeAsync(user);
+        var resetLink = $"http://localhost:5173/reset-password?token={code}";
 
         await _emailServices.SendPasswordResetEmailAsync(user.Email, user.Username, resetLink);
     }
+
 
 
 

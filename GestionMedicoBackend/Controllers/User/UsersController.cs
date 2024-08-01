@@ -137,13 +137,13 @@ namespace GestionMedicoBackend.Controllers.User
             }
         }
 
-        [HttpGet("confirm-account/{token}")]
-        public async Task<IActionResult> ConfirmAccount(string token)
+        [HttpPost("confirm-account")]
+        public async Task<IActionResult> ConfirmAccount([FromBody] ConfirmAccountDto confirmAccountDto)
         {
             try
             {
-                var result = await _userService.ConfirmAccountAsync(token);
-                if (!result) return BadRequest(new { message = "Token inválido o expirado." });
+                var result = await _userService.ConfirmAccountAsync(confirmAccountDto.Code);
+                if (!result) return BadRequest(new { message = "Código inválido o expirado." });
 
                 return Ok(new { message = "Cuenta confirmada exitosamente." });
             }
